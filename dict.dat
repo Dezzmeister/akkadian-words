@@ -1,0 +1,278 @@
+abum,father,n,s;nom;m
+abim,father,n,s;gen;m
+abam,father,n,s;gen;m
+abū,fathers,n,pl;nom;m
+abī,fathers,n,pl;gen;acc;m
+ālum,town;city,n,s;nom;m
+ālim,town;city,n,s;gen;m
+ālam,town;city,n,s;acc;m
+ālū,towns;cities,n,pl;nom;m
+ālī,towns;cities,n,pl;gen;acc;m
+amtum,female slave;womanservant,n,s;nom;f
+amtim,female slave;womanservant,n,s;gen;f
+amtam,female slave;womanservant,n,s;acc;f
+amātum,female slaves;womanservants,n,pl;nom;f
+amātim,female slaves;womanservants,n,pl;gen;acc;f
+bēlum,lord;master;owner,n,s;nom;m
+bēlim,lord;master;owner,n,s;gen;m
+bēlam,lord;master;owner,n,s;acc;m
+bēlū,lords;masters;owners,n,pl;nom;m
+bēlī,lords;masters;owners,n,pl;gen;acc;m
+ẖurāṣum,gold,n,s;nom;m
+ẖurāṣim,gold,n,s;gen;m
+ẖurāṣam,gold,n,s;acc;m
+iltum,goddess,n,s;nom;f
+iltim,goddess,n,s;gen;f
+iltam,goddess,n,s;acc;f
+ilātum,goddesses,n,pl;nom;f
+ilātim,goddesses,n,pl;gen;acc;f
+ilum,god,n,s;nom;m
+ilim,god,n,s;gen;m
+ilam,god,n,s;acc;m
+ilū,god,n,pl;nom;m
+ilī,god,n,pl;gen;acc;m
+kaspum,silver,n,s;nom;m
+kaspim,silver,n,s;gen;m
+kaspam,silver,n,s;acc;m
+mārtum,daughter,n,s;nom;f
+mārtim,daughter,n,s;gen;f
+mārtam,daughter,n,s;acc;f
+mārātum,daughters,n,pl;nom;f
+mārātim,daughters,n,pl;gen;acc;f
+mārum,son,n,s;nom;m
+mārim,son,n,s;gen;m
+māram,son,n,s;acc;m
+mārū,sons,n,pl;nom;m
+mārī,sons,n,pl;gen;acc;m
+qaqqadum,head;top;person;principal amount,n,s;nom;m
+qaqqadim,head;top;person;principal amount,n,s;gen;m
+qaqqadam,head;top;person;principal amount,n,s;acc;m
+qaqqadū,heads;principal amounts,n,pl;nom;m
+qaqqadī,heads;principal amounts,n,pl;gen;acc;m
+ṣābum,gang;army;troops;worker;soldier,n,s;nom;m
+ṣābim,gang;army;troops;worker;soldier,n,s;gen;m
+ṣābam,gang;army;troops;worker;soldier,n,s;acc;m
+ṣābū,gangs;armies;troops;workers;soldiers,n,pl;nom;m
+ṣābī,gangs;armies;troops;workers;soldiers,n,pl;gen;acc;m
+šarratum,queen,n,s;nom;f
+šarratim,queen,n,s;gen;f
+šarratam,queen,n,s;acc;f
+šarrātum,queens,n,pl;nom;f
+šarrātim,queens,n,pl;gen;acc;f
+šarrum,king,n,s;nom;m
+šarrim,king,n,s;gen;m
+šarram,king,n,s;acc;m
+šarrū,kings,n,pl;nom;m
+šarrī,kings,n,pl;gen;acc;m
+wardum,male slave;manservant,n,s;nom;m
+wardim,male slave;manservant,n,s;gen;m
+wardam,male slave;manservant,n,s;acc;m
+wardū,male slaves;manservants,n,pl;nom;m
+wardī,male slaves;manservants,n,pl;gen;acc;m
+u,and,conj
+aššatum,wife,n,s;nom;f
+aššatim,wife,n,s;gen;f
+aššatam,wife,n,s;acc;f
+aššātum,wives,n,pl;nom;f
+aššātim,wives,n,pl;gen;acc;f
+bītum,house;estate;household,n,s;nom;m
+bītim,house;estate;household,n,s;gen;m
+bītam,house;estate;household,n,s;acc;m
+bītātum,houses;estates;households,n,pl;nom;f
+bītātim,houses;estates;households,n,pl;gen;acc;f
+emūqum,strength;power;force;ability;armed forces;value,n,s;nom;m
+emūqim,strength;power;force;ability;armed forces;value,n,s;gen;m
+emūqam,strength;power;force;ability;armed forces;value,n,s;acc;m
+emūqān,strength;power;force;ability;armed forces;value,n,dual;nom
+emūqīn,strength;power;force;ability;armed forces;value,n,dual;gen;acc
+emūqū,strength;power;force;ability;armed forces;value,n,pl;nom;m
+emūqī,strength;power;force;ability;armed forces;value,n,pl;gen;acc;m
+emūqātum,strength;power;force;ability;armed forces;value,n,pl;nom;f
+emūqātim,strength;power;force;ability;armed forces;value,n,pl;gen;acc;f
+īnum,eye;spring,n,s;nom;f
+īnim,eye;spring,n,s;gen;f
+īnam,eye;spring,n,s;acc;f
+īnān,eyes,n,dual;nom
+īnīn,eyes,n,dual;gen;acc
+īnātum,eyes;springs,n,pl;nom;f
+īnātim,eyes;springs,n,pl;gen;acc;f
+išdum,base;foundation;bottom;administration,n,s;nom;m
+išdim,base;foundation;bottom;administration,n,s;gen;m
+išdam,base;foundation;bottom;administration,n,s;acc;m
+išdān,base;foundation;bottom;administration;buttocks,n,dual;nom
+išdīn,base;foundation;bottom;administration;buttocks,n,dual;gen;acc
+išdātum,bases;foundations;bottoms;administrations,n,pl;nom;f
+išdātim,bases;foundations;bottoms;administrations,n,pl;gen;acc;f
+libbum,heart;mind;thought;wish;inside;center;midst,n,s;nom;m
+libbim,heart;mind;thought;wish;inside;center;midst,n,s;gen;m
+libbam,heart;mind;thought;wish;inside;center;midst,n,s;acc;m
+libbū,hearts;minds;thoughts;wishes;insides;centers;midsts,n,pl;nom;m
+libbī,hearts;minds;thoughts;wishes;insides;centers;midsts,n,pl;gen;acc;m
+mutum,husband;man,n,s;nom;m
+mutim,husband;man,n,s;gen;m
+mutam,husband;man,n,s;acc;m
+mutū,husbands;men,n,pl;nom;m
+mutī,husbands;men,n,pl;gen;acc;m
+nārum,river;canal,n,s;nom;f
+nārim,river;canal,n,s;gen;f
+nāram,river;canal,n,s;acc;f
+nārātum,rivers;canals,n,pl;nom;f
+nārātim,rivers;canals,n,pl;gen;acc;f
+šīpātum,wool,n,pl;nom;f
+šīpātim,wool,n,pl;gen;acc;f
+ṭuppum,tablet;document;letter,n,s;nom;m;f
+ṭuppim,tablet;document;letter,n,s;gen;m;f
+ṭuppam,tablet;document;letter,n,s;acc;m;f
+ṭuppū,tablets;documents;letters,n,pl;nom;m
+ṭuppī,tablets;documents;letters,n,pl;gen;acc;m
+ṭuppātum,tablets;documents;letters,n,pl;nom;f
+ṭuppātim,tablets;documents;letters,n,pl;gen;acc;f
+ummum,mother,n,s;nom;f
+ummim,mother,n,s;gen;f
+ummam,mother,n,s;acc;f
+ummātum,mothers,n,pl;nom;f
+ummātim,mothers,n,pl;gen;acc;f
+uznum,ear;wisdom;understanding,n,s;nom;f
+uznim,ear;wisdom;understanding,n,s;gen;f
+uznam,ear;wisdom;understanding,n,s;acc;f
+uznān,ears,n,dual;nom;f
+uznīn,ears,n,dual;gen;acc;f
+ana,to;toward;unto;for;temporally 'for';temporally '(with)in',prep
+ina,in;into;at;among;with (things);by means of;by;from;from within (a place);temporally 'in';temporally 'on';at the time of,prep
+ištu,from;out of;away from (a place);temporally 'since',prep
+itti,with persons;with deities;in the company of;from (a person),prep
+ša,the one of;of,pr,s
+anāku,I,pr,m;f
+atta,you,pr,s;m
+atti,you,pr,s;f
+šū,he;it,pr,s;m
+šī,she;it,pr,s;f
+nīnu,we,pr,pl;m;f
+attunu,you,pr,pl;m
+attina,you,pr,pl;f
+šunu,they,pr,pl;m
+šina,they,pr,pl;f
+damāqum,to become good;to become better;to improve;to prosper,v,inf;G
+idmiq,he/she became good;he/she became better;he/she improved;he/she prospered,v,pret;m;f
+tadmiq,you became good;you became better;you improved;you prospered,v,pret;s;m
+tadmiqī,you became good;you became better;you improved;you prospered,v,pret;s;f
+admiq,I became good;I became better;I improved;I prospered,v,pret;s;m;f
+idmiqū,they became good;they became better;they improved;they prospered,v,pret;pl;m
+idmiqā,they became good;they became better;they improved;they prospered,v,pret;pl;f
+tadmiqā,you became good;you became better;you improved;you prospered,v,pret;pl;m;f
+nidmiq,we became good;we became better;we improved;we prospered,v,pret;pl;m;f
+danānum,to become strong,v,inf;G
+idnin,he/she became strong,v,pret;s;m;f
+tadnin,you became strong,v,pret;s;m
+tadninī,you became strong,v,pret;s;f
+adnin,I became strong,v,pret;s;m;f
+idninū,they became strong,v,pret;pl;m
+idninā,they became strong,v,pret;pl;f
+tadninā,you became strong,v,pret;pl;m;f
+nidnin,we became strong,v,pret;pl;m;f
+ẖalāqum,to disappear;to go missing;to get lost;to escape;to perish,v,inf;G
+iẖliq,he/she disappeared;he/she went missing;he/she got lost;he/she escaped;he/she perished,v,pret;s;m;f
+taẖliq,you disappeared;you went missing;you got lost;you escaped;you perished,v,pret;s;m
+taẖliqī,you disappeared;you went missing;you got lost;you escaped;you perished,v,pret;s;f
+aẖliq,I disappeared;I went missing;I got lost;I escaped;I perished,v,pret;s;m;f
+iẖliqū,they disappeared;they went misssing;they got lost;they escaped;they perished,v,pret;pl;m
+iẖliqā,they disappeared;they went misssing;they got lost;they escaped;they perished,v,pret;pl;f
+taẖliqā,you disappeared;you went missing;you got lost;you escaped;you perished,v,pret;pl;m;f
+niẖliq,we disappeared;we went missing;we got lost;we escaped;we perished,v,pret;pl;m;f
+kašādum,to arrive;to reach;to achieve;to conquer;to defeat,v,inf;G
+ikšud,he/she arrived;he/she reached;he/she achieved;he/she conquered;he/she defeated,v,pret;s;m
+takšud,you arrived;you reached;you achieved;you conquered;you defeated,v,pret;s;m
+takšudī,you arrived;you reached;you achieved;you conquered;you defeated,v,pret;s;f
+akšud,I arrived;I reached;I achieved;I conquered;I defeated,v,pret;s;m;f
+ikšudū,they arrived;they reached;they achieved;they conquered;they defeated,v,pret;pl;m
+ikšudā,they arrived;they reached;they achieved;they conquered;they defeated,v,pret;pl;f
+takšudā,you arrived;you reached;you achieved;you conquered;you defeated,v,pret;pl;m;f
+nikšud,we arrived;we reached;we achieved;we conquered;we defeated,v,pret;pl;m;f
+maẖāṣum,to strike;to hit;to smite;to wound;to kill,v,inf;G
+imẖaṣ,he/she struck;he/she hit;he/she smote;he/she wounded;he/she killed,v,pret;s;m;f
+tamẖaṣ,you struck;you hit;you smote;you wounded;you killed,v,pret;s;m
+tamẖaṣī,you struck;you hit;you smote;you wounded;you killed,v,pret;s;f
+amẖaṣ,I struck;I hit;I smote;I wounded;I killed,v,pret;s;m;f
+imẖaṣū,they struck;they hit;they smote;they wounded;they killed,v,pret;pl;m
+imẖaṣā,they struck;they hit;they smote;they wounded;they killed,v,pret;pl;f
+tamẖaṣā,you struck;you hit;you smote;you wounded;you killed,v,pret;pl;m;f
+nimẖaṣ,we struck;we hit;we smote;we wounded;we killed,v,pret;pl;m;f
+maqātum,to fall;to fall down;to collapse;to arrive (news);to happen;to fall upon,v,inf;G
+imqut,he/she fell;he/she fell down;he/she collapsed;it arrived (news);it happened;he/she fell upon,v,pret;s;m
+tamqut,you fell;you fell down;you collapsed;you fell upon,v,pret;s;m
+tamqutī,you fell;you fell down;you collapsed;you fell upon,v,pret;s;f
+amqut,I fell;I fell down;I collapsed;I fell upon,v,pret;s;m;f
+imqutū,they fell;they fell down;they collapsed;they fell upon;they arrived (news),v,pret;pl;m
+imqutā,they fell;they fell down;they collapsed;they fell upon;they arrived (news),v,pret;pl;f
+tamqutā,you fell;you fell down;you collapsed;you fell upon,v,pret;pl;m;f
+nimqut,we fell;we fell down;we collapsed;we fell upon,v,pret;pl;m;f
+marāṣum,to become sick;to fall ill;to be painful;to become painful;to become troublesome;to become difficult,v,inf;G
+imraṣ,he/she became sick;he/she fell ill;he/she was painful;he/she became painful;he/she became troublesome;he/she became difficult,v,pret;s;m
+tamraṣ,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;s;m
+tamraṣī,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;s;f
+amraṣ,I became sick;I fell ill;I was painful;I became painful;I became troublesome;I became difficult,v,pret;s;m;f
+imraṣū,they became sick;they fell ill;they were painful;they became painful;they became troublesome;they became difficult,v,pret;pl;m
+imraṣā,they became sick;they fell ill;they were painful;they became painful;they became troublesome;they became difficult,v,pret;pl;f
+tamraṣā,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;pl;m;f
+nimraṣ,we became sick;we fell ill;we were painful;we became painful;we became troublesome;we became difficult,v,pret;pl;m;f
+rapāšum,to become wide;to become broad,v,inf;G
+irpiš,he/she became wide;he/she became broad,v,pret;s;m
+tarpiš,you became wide;you became broad,v,pret;s;m
+tarpišī,you became wide;you became broad,v,pret;s;f
+arpiš,I became wide;I became broad,v,pret;m;f
+irpišū,they became wide;they became broad,v,pret;pl;m
+irpišā,they became wide;they became broad,v,pret;pl;f
+tarpišā,you became wide;you became broad,v,pret;pl;m;f
+nirpiš,we became wide;we became broad,v,pret;pl;m;f
+ṣabātum,to seize;to take hold of;to arrest;to capture,v,inf;G
+iṣbat,he/she seized;he/she took hold of;he/she arrested;he/she captured,v,pret;s;m
+taṣbat,you seized;you took hold of;you arrested;you captured,v,pret;s;m
+taṣbatī,you seized;you took hold of;you arrested;you captured,v,pret;s;f
+aṣbat,I seized;I took hold of;I arrested;I captured,v,pret;s;m;f
+iṣbatū,they seized;they took hold of;they arrested;they captured,v,pret;pl;m
+iṣbatā,they seized;they took hold of;they arrested;they captured,v,pret;pl;f
+taṣbatā,you seized;you took hold of;you arrested;you captured,v,pret;pl;m;f
+niṣbat,we seized;we took hold of;we arrested;we captured,v,pret;pl;m;f
+šakānum,to place;to set;to put;to establish;to install;to appoint;to assign;to impose,v,inf;G
+iškun,he/she placed;he/she set;he/she put;he/she established;he/she installed;he/she appointed;he/she assigned;he/she imposed,v,pret;s;m
+taškun,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;s;m
+taškunī,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;s;f
+aškun,I placed;I set;I put;I established;I installed;I appointed;I assigned;I imposed,v,pret;s;m;f
+iškunū,they placed;they set;they put;they established;they installed;they appointed;they assigned;they imposed,v,pret;pl;m
+iškunā,they placed;they set;they put;they established;they installed;they appointed;they assigned;they imposed,v,pret;pl;f
+taškunā,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;pl;m;f
+niškun,we placed;we set;we put;we established;we installed;we appointed;we assigned;we imposed,v,pret;pl;m;f
+šarāqum,to steal,v,inf;G
+išriq,he/she stole,v,pret;s;m
+tašriq,you stole,v,pret;s;m
+tašriqī,you stole,v,pret;s;f
+ašriq,I stole,v,pret;s;m;f
+išriqū,they stole,v,pret;pl;m
+išriqā,they stole,v,pret;pl;f
+tašriqā,you stole,v,pret;pl;m;f
+nišriq,we stole,v,pret;pl;m;f
+awīlum,human being;person;grown man;free man;boss;man,n,s;nom;m
+awīlim,human being;person;grown man;free man;boss;man,n,s;gen;m
+awīlam,human being;person;grown man;free man;boss;man,n,s;acc;m
+awīlū,human beings;people;grown men;free men;bosses;men,n,pl;nom;m
+awīlī,human beings;people;grown men;free men;bosses;men,n,pl;gen;acc;m
+mātum,country;native land;land;open country,n,s;nom;f
+mātim,country;native land;land;open country,n,s;gen;f
+mātam,country;native land;land;open country,n,s;acc;f
+mātātum,countries;native lands;lands,n,pl;nom;f
+mātātim,countries;native lands;lands,n,pl;gen;acc;f
+qātum,hand;care;charge;responsibility,n,s;nom;f
+qātim,hand;care;charge;responsibility,n,s;gen;f
+qātam,hand;care;charge;responsibility,n,s;acc;f
+qātān,hands,n,dual;nom;f
+qātīn,hands,n,dual;gen;acc;f
+qātātum,guarantee;security;pledge,n,pl;nom;f
+qātātim,guarantee;security;pledge,n,pl;gen;acc;f
+qātam ṣabātum,to help,id
+qātam šakānum,to begin,id
+šarrāqum,thief,n,s;nom;m
+šarrāqim,thief,n,s;gen;m
+šarrāqam,thief,n,s;acc;m
+šarrāqū,thieves,n,pl;nom;m
+šarrāqī,thieves,n,pl;gen;acc;m
+eli,on;upon;over;above;towards;against;beyond;more than,prep
