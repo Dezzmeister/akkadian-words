@@ -143,6 +143,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AkkadianWords.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="components.h" />
     <ClInclude Include="errors.h" />
     <ClInclude Include="dict.h" />
     <ClInclude Include="framework.h" />
@@ -152,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AkkadianWords.cpp" />
+    <ClCompile Include="components.cpp" />
     <ClCompile Include="dict.cpp" />
     <ClCompile Include="errors.cpp" />
     <ClCompile Include="handlers.cpp" />

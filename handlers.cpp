@@ -6,20 +6,10 @@
 #include <string>
 #include <windowsx.h>
 
+#include "common.h"
+#include "components.h"
 #include "handlers.h"
 #include "resource.h"
-
-const static std::vector<std::vector<wchar_t>> char_cycle_map = {
-    {L's', L'š', L'ṣ'},
-    {L't', L'ṭ'},
-    {L'a', L'ā', L'â'},
-    {L'e', L'ē', L'ê'},
-    {L'i', L'ī', L'î'},
-    {L'u', L'ū', L'û'},
-    {L'h', L'ẖ'}
-};
-
-const static int MAX_ANSWER_CHARS = 64;
 
 static std::wstring get_input_txt(HWND hDlg, int resId) {
     wchar_t buf[MAX_ANSWER_CHARS + 1];
@@ -27,20 +17,6 @@ static std::wstring get_input_txt(HWND hDlg, int resId) {
     buf[chars_read] = '\0';
 
     return std::wstring(buf);
-}
-
-static wchar_t next_char(wchar_t c) {
-    for (size_t i = 0; i < char_cycle_map.size(); i++) {
-        size_t len = char_cycle_map[i].size();
-
-        for (size_t j = 0; j < len; j++) {
-            if (char_cycle_map[i][j] == c) {
-                return char_cycle_map[i][(j + 1) % len];
-            }
-        }
-    }
-
-    return c;
 }
 
 static std::wstring get_word_class_str(std::vector<WordClass>& classes) {
@@ -133,44 +109,6 @@ std::wstring PracticeState::get_question() {
     return word + L" (" + attrs + L")";
 }
 
-static LRESULT CALLBACK AnswerEditProc(HWND hwnd, UINT msg, WPARAM w_param, LPARAM l_param, UINT_PTR u_id_subclass, DWORD_PTR dw_ref_data) {
-    static wchar_t answer_buf[MAX_ANSWER_CHARS + 1];
-    
-    switch (msg) {
-    case WM_KEYDOWN: {
-        if (w_param == VK_UP) {
-            int res = SendMessage(hwnd, EM_GETSEL, NULL, NULL);
-            int caret = LOWORD(res);
-            int end = HIWORD(res);
-
-            if (caret == 0) {
-                break;
-            }
-
-            int repeat = l_param & 0xffff;
-
-            GetWindowTextW(hwnd, answer_buf, MAX_ANSWER_CHARS);
-            int len = lstrlenW(answer_buf);
-
-            assert(len <= MAX_ANSWER_CHARS);
-            assert(caret <= len);
-            answer_buf[len] = L'\0';
-
-            wchar_t old_char = answer_buf[caret - 1];
-            wchar_t new_char = next_char(old_char);
-            answer_buf[caret - 1] = new_char;
-            SetWindowTextW(hwnd, answer_buf);
-            SendMessage(hwnd, EM_SETSEL, caret, end);
-            return (INT_PTR)TRUE;
-        }
-
-        break;
-    }
-    }
-
-    return DefSubclassProc(hwnd, msg, w_param, l_param);
-}
-
 static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param, bool engl) {
     UNREFERENCED_PARAMETER(l_param);
 
@@ -184,7 +122,7 @@ static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, 
     switch (message) {
     case WM_INITDIALOG: {
         Edit_LimitText(answer_hwnd, MAX_ANSWER_CHARS);
-        SetWindowSubclass(answer_hwnd, AnswerEditProc, 0, NULL);
+        SetWindowSubclass(answer_hwnd, AkkadianEditControl, 0, NULL);
 
         state.reset();
         state.new_word(Akk::dict, engl);
