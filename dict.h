@@ -17,7 +17,7 @@ const std::wstring GRAMMAR_KINDS[] = {
 	L"conj",
 	L"prep",
 	L"v",
-	L"id"
+	L"adv"
 };
 
 const std::wstring WORD_CLASSES[] = {
@@ -31,7 +31,8 @@ const std::wstring WORD_CLASSES[] = {
 	L"acc",
 	L"inf",
 	L"pret",
-	L"G"
+	L"G",
+	L"id"
 };
 
 const size_t NUM_GRAMMAR_KINDS = (sizeof GRAMMAR_KINDS) / (sizeof * GRAMMAR_KINDS);
@@ -44,7 +45,7 @@ typedef enum {
 	Article,
 	Preposition,
 	Verb,
-	Idiom
+	Adverb
 } GrammarKind;
 
 typedef enum {
@@ -58,7 +59,8 @@ typedef enum {
 	Accusative,
 	Infinitive,
 	Preterite,
-	GStem
+	GStem,
+	Idiom
 } WordClass;
 
 typedef struct DictEntry {

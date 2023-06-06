@@ -180,7 +180,7 @@ iẖliqā,they disappeared;they went misssing;they got lost;they escaped;they pe
 taẖliqā,you disappeared;you went missing;you got lost;you escaped;you perished,v,pret;pl;m;f
 niẖliq,we disappeared;we went missing;we got lost;we escaped;we perished,v,pret;pl;m;f
 kašādum,to arrive;to reach;to achieve;to conquer;to defeat,v,inf;G
-ikšud,he/she arrived;he/she reached;he/she achieved;he/she conquered;he/she defeated,v,pret;s;m
+ikšud,he/she arrived;he/she reached;he/she achieved;he/she conquered;he/she defeated,v,pret;s;m;f
 takšud,you arrived;you reached;you achieved;you conquered;you defeated,v,pret;s;m
 takšudī,you arrived;you reached;you achieved;you conquered;you defeated,v,pret;s;f
 akšud,I arrived;I reached;I achieved;I conquered;I defeated,v,pret;s;m;f
@@ -198,7 +198,7 @@ imẖaṣā,they struck;they hit;they smote;they wounded;they killed,v,pret;pl;f
 tamẖaṣā,you struck;you hit;you smote;you wounded;you killed,v,pret;pl;m;f
 nimẖaṣ,we struck;we hit;we smote;we wounded;we killed,v,pret;pl;m;f
 maqātum,to fall;to fall down;to collapse;to arrive (news);to happen;to fall upon,v,inf;G
-imqut,he/she fell;he/she fell down;he/she collapsed;it arrived (news);it happened;he/she fell upon,v,pret;s;m
+imqut,he/she fell;he/she fell down;he/she collapsed;it arrived (news);it happened;he/she fell upon,v,pret;s;m;f
 tamqut,you fell;you fell down;you collapsed;you fell upon,v,pret;s;m
 tamqutī,you fell;you fell down;you collapsed;you fell upon,v,pret;s;f
 amqut,I fell;I fell down;I collapsed;I fell upon,v,pret;s;m;f
@@ -207,7 +207,7 @@ imqutā,they fell;they fell down;they collapsed;they fell upon;they arrived (new
 tamqutā,you fell;you fell down;you collapsed;you fell upon,v,pret;pl;m;f
 nimqut,we fell;we fell down;we collapsed;we fell upon,v,pret;pl;m;f
 marāṣum,to become sick;to fall ill;to be painful;to become painful;to become troublesome;to become difficult,v,inf;G
-imraṣ,he/she became sick;he/she fell ill;he/she was painful;he/she became painful;he/she became troublesome;he/she became difficult,v,pret;s;m
+imraṣ,he/she became sick;he/she fell ill;he/she was painful;he/she became painful;he/she became troublesome;he/she became difficult,v,pret;s;m;f
 tamraṣ,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;s;m
 tamraṣī,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;s;f
 amraṣ,I became sick;I fell ill;I was painful;I became painful;I became troublesome;I became difficult,v,pret;s;m;f
@@ -216,7 +216,7 @@ imraṣā,they became sick;they fell ill;they were painful;they became painful;t
 tamraṣā,you became sick;you fell ill;you were painful;you became painful;you became troublesome;you became difficult,v,pret;pl;m;f
 nimraṣ,we became sick;we fell ill;we were painful;we became painful;we became troublesome;we became difficult,v,pret;pl;m;f
 rapāšum,to become wide;to become broad,v,inf;G
-irpiš,he/she became wide;he/she became broad,v,pret;s;m
+irpiš,he/she became wide;he/she became broad,v,pret;s;m;f
 tarpiš,you became wide;you became broad,v,pret;s;m
 tarpišī,you became wide;you became broad,v,pret;s;f
 arpiš,I became wide;I became broad,v,pret;m;f
@@ -225,7 +225,7 @@ irpišā,they became wide;they became broad,v,pret;pl;f
 tarpišā,you became wide;you became broad,v,pret;pl;m;f
 nirpiš,we became wide;we became broad,v,pret;pl;m;f
 ṣabātum,to seize;to take hold of;to arrest;to capture,v,inf;G
-iṣbat,he/she seized;he/she took hold of;he/she arrested;he/she captured,v,pret;s;m
+iṣbat,he/she seized;he/she took hold of;he/she arrested;he/she captured,v,pret;s;m;f
 taṣbat,you seized;you took hold of;you arrested;you captured,v,pret;s;m
 taṣbatī,you seized;you took hold of;you arrested;you captured,v,pret;s;f
 aṣbat,I seized;I took hold of;I arrested;I captured,v,pret;s;m;f
@@ -234,7 +234,7 @@ iṣbatā,they seized;they took hold of;they arrested;they captured,v,pret;pl;f
 taṣbatā,you seized;you took hold of;you arrested;you captured,v,pret;pl;m;f
 niṣbat,we seized;we took hold of;we arrested;we captured,v,pret;pl;m;f
 šakānum,to place;to set;to put;to establish;to install;to appoint;to assign;to impose,v,inf;G
-iškun,he/she placed;he/she set;he/she put;he/she established;he/she installed;he/she appointed;he/she assigned;he/she imposed,v,pret;s;m
+iškun,he/she placed;he/she set;he/she put;he/she established;he/she installed;he/she appointed;he/she assigned;he/she imposed,v,pret;s;m;f
 taškun,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;s;m
 taškunī,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;s;f
 aškun,I placed;I set;I put;I established;I installed;I appointed;I assigned;I imposed,v,pret;s;m;f
@@ -243,7 +243,7 @@ iškunā,they placed;they set;they put;they established;they installed;they appo
 taškunā,you placed;you set;you put;you established;you installed;you appointed;you assigned;you imposed,v,pret;pl;m;f
 niškun,we placed;we set;we put;we established;we installed;we appointed;we assigned;we imposed,v,pret;pl;m;f
 šarāqum,to steal,v,inf;G
-išriq,he/she stole,v,pret;s;m
+išriq,he/she stole,v,pret;s;m;f
 tašriq,you stole,v,pret;s;m
 tašriqī,you stole,v,pret;s;f
 ašriq,I stole,v,pret;s;m;f
@@ -268,11 +268,314 @@ qātān,hands,n,dual;nom;f
 qātīn,hands,n,dual;gen;acc;f
 qātātum,guarantee;security;pledge,n,pl;nom;f
 qātātim,guarantee;security;pledge,n,pl;gen;acc;f
-qātam ṣabātum,to help,id
-qātam šakānum,to begin,id
+qātam ṣabātum,to help,v,id
+qātam šakānum,to begin,v,id
 šarrāqum,thief,n,s;nom;m
 šarrāqim,thief,n,s;gen;m
 šarrāqam,thief,n,s;acc;m
 šarrāqū,thieves,n,pl;nom;m
 šarrāqī,thieves,n,pl;gen;acc;m
 eli,on;upon;over;above;towards;against;beyond;more than,prep
+balāṭum,to live;to be alive;to be healthy;to get well;to recover,v,inf;G
+balāṭum,life,n,s;nom;m
+balāṭim,life,n,s;gen;m
+balāṭam,life,n,s;acc;m
+ibluṭ,he/she lived;he/she was alive;he/she was healthy;he/she got well;he/she recovered,v,pret;s;m;f
+tabluṭ,you lived;you were alive;you were healthy;you got well;you recovered,v,pret;s;m
+tabluṭī,you lived;you were alive;you were healthy;you got well;you recovered,v,pret;s;f
+abluṭ,I lived;I was alive;I was healthy;I got well;I recovered,v,pret,s;m;f
+ibluṭū,they lived;they were alive;they were healthy;they got well;they recovered,v,pret;pl;m
+ibluṭā,they lived;they were alive;they were healthy;they got well;they recovered,v,pret;pl;f
+tabluṭā,you lived;you were alive;you were healthy;you got well;you recovered,v,pret;pl;m;f
+nibluṭ,we lived;we were alive;we were healthy;we got well;we recovered,v,pret;pl;m;f
+balṭum,alive;healthy;safe,adj,s;nom;m
+balṭim,alive;healthy;safe,adj,s;gen;m
+balṭam,alive;healthy;safe,adj,s;acc;m
+balṭūtum,alive;healthy;safe,adj,pl;nom;m
+balṭūtim,alive;healthy;safe,adj,pl;gen;acc;m
+balittum,alive;healthy;safe,adj,s;nom;f
+balittim,alive;healthy;safe,adj,s;gen;f
+balittam,alive;healthy;safe,adj,s;acc;f
+balṭātum,alive;healthy;safe,adj,pl;nom;f
+balṭātim,alive;healthy;safe,adj,pl;gen;acc;f
+gamārum,to bring to an end;to annihilate;to use up;to settle;to encompass;to control;to finish;to come to an end,v,inf;G
+igmur,he/she brought to an end;he/she annihilated;he/she used up;he/she settled;he/she encompassed;he/she controlled;he/she finished;he/she came to an end,v,pret;s;m;f
+tagmur,you brought to an end;you annihilated;you used up;you settled;you encompassed;you controlled;you finished;you came to an end,v,pret;s;m
+tagmurī,you brought to an end;you annihilated;you used up;you settled;you encompassed;you controlled;you finished;you came to an end,v,pret;s;m
+agmur,I brought to an end;I annihilated;I used up;I settled;I encompassed;I controlled;I finished;I came to an end,v,pret;s;m;f
+igmurū,they brought to an end;they annihilated;they used up;they settled;they encompassed;they controlled;they finished;they came to an end,v,pret;pl;m
+igmurā,they brought to an end;they annihilated;they used up;they settled;they encompassed;they controlled;they finished;they came to an end,v,pret;pl;f
+tagmurā,you brought to an end;you annihilated;you used up;you settled;you encompassed;you controlled;you finished;you came to an end,v,pret;pl;m;f
+nigmur,we brought to an end;we annihilated;we used up;we settled;we encompassed;we controlled;we finished,v,pret;pl;m;f
+gamrum,finished;settled;complete;entire;full,adj,s;nom;m
+gamrim,finished;settled;complete;entire;full,adj,s;gen;m
+gamram,finished;settled;complete;entire;full,adj,s;acc;m
+gamrūtum,finished;settled;complete;entire;full,adj,pl;nom;m
+gamrūtim,finished;settled;complete;entire;full,adj,pl;gen;acc;m
+gamirtum,finished;settled;complete;entire;full,adj,s;nom;f
+gamirtim,finished;settled;complete;entire;full,adj,s;gen;f
+gamirtam,finished;settled;complete;entire;full,adj,s;acc;f
+gamrātum,finished;settled;complete;entire;full,adj,pl;nom;f
+gamrātim,finished;settled;complete;entire;full,adj,pl;gen;acc;f
+kanākum,to seal;to place under seal,v,inf;G
+iknuk,he/she sealed;he/she placed under seal,v,pret;s;m;f
+taknuk,you sealed;you placed under seal,v,pret;s;m
+taknukī,you sealed;you placed under seal,v,pret;s;f
+aknuk,I sealed;I placed under seal,v,pret;s;m;f
+iknukū,they sealed;they placed under seal,v,pret;pl;m
+iknukā,they sealed;they placed under seal,v,pret;pl;f
+taknukā,you sealed;you placed under seal,v,pret;pl;m;f
+niknuk,we sealed;we placed under seal,v,pret;pl;m;f
+kankum,sealed;under seal,adj,s;nom;m
+kankim,sealed;under seal,adj,s;gen;m
+kankam,sealed;under seal,adj,s;acc;m
+kankūtum,sealed;under seal,adj,pl;nom;m
+kankūtim,sealed;under seal,adj,pl;gen;acc;m
+kaniktum,sealed;under seal,adj,s;nom;f
+kaniktim,sealed;under seal,adj,s;gen;f
+kaniktam,sealed;under seal,adj,s;acc;f
+kankātum,sealed;under seal,adj,pl;nom;f
+kankātim,sealed;under seal,adj,pl;gen;acc;f
+maẖārum,to accept;to receive;to approach;to meet;to confront,v,inf;G
+imẖur,he/she accepted;he/she received;he/she approached;he/she met;he/she confronted,v,pret;s;m;f
+tamẖur,you accepted;you received;you approached;you met;you confronted,v,pret;s;m
+tamẖurī,you accepted;you received;you approached;you met;you confronted,v,pret;s;f
+amẖur,I accepted;I received;I approached;I met;I confronted,v,pret;s;m;f
+imẖurū,they accepted;they received;they approached;they met;they confronted,v,pret;pl;m
+imẖurā,they accepted;they received;they approached;they met;they confronted,v,pret;pl;f
+tamẖurā,you accepted;you received;you approached;you met;you confronted,v,pret;pl;m;f
+nimẖur,we accepted;we received;we approached;we met;we confronted,v,pret;pl;m;f
+maẖrum,received,adj,s;nom;m
+maẖrim,received,adj,s;gen;m
+maẖram,received,adj,s;acc;m
+maẖrūtum,received,adj,pl;nom;m
+maẖrūtim,recieved,adj,pl;gen;acc;m
+maẖirtum,received,adj,s;nom;f
+maẖirtim,received,adj,s;gen;f
+maẖirtam,received,adj,s;acc;f
+maẖrātum,received,adj,pl;nom;f
+maẖrātim,recieved,adj,pl;gen;acc;f
+īnam ša X maẖārum,to please X,v,id
+šalāmum,to become whole;to become sound;to become well;to become uninjured;to become safe;to recover;to arrive safely;to succeed;to prosper;to be completed,v,inf;G
+išlim,he/she became whole;he/she became sound;he/she became well;he/she became uninjured;he/she became safe;he/she recovered;he/she arrived safely;he/she succeeded;he/she prospered;it was completed,v,pret;s;m;f
+tašlim,you became whole;you became sound;you became well;you became uninjured;you became safe;you recovered;you arrived safely;you succeeded;you prospered,v,pret;s;m
+tašlimī,you became whole;you became sound;you became well;you became uninjured;you became safe;you recovered;you arrived safely;you succeeded;you prospered,v,pret;s;f
+ašlim,I became whole;I became sound;I became well;I became uninjured;I became safe;I recovered;I arrived safely;I succeeded;I prospered,v,pret;s;m;f
+išlimū,they became whole;they became sound;they became well;they became uninjured;they became safe;they recovered;they arrived safely;they succeeded;they prospered;they were completed,v,pret;pl;m
+išlimā,they became whole;they became sound;they became well;they became uninjured;they became safe;they recovered;they arrived safely;they succeeded;they prospered;they were completed,v,pret;pl;f
+tašlimā,you became whole;you became sound;you became well;you became uninjured;you became safe;you recovered;you arrived safely;you succeeded;you prospered,v,pret;pl;m;f
+nišlim,we became whole;we became sound;we became well;we became uninjured;we became safe;we recovered;we arrived safely;we succeeded;we prospered,v,pret;pl;m;f
+šalmum,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;nom;m
+šalmim,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;gen;m
+šalmam,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;acc;m
+šalmūtum,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,pl;nom;m
+šalmūtim,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,pl;gen;acc;m
+šalimtum,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;nom;f
+šalimtim,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;gen;f
+šalimtam,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,s;acc;f
+šalmātum,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,pl;nom;f
+šalmātim,whole;sound;well;safe;in good condition;intact;complete;favorable,adj,pl;gen;acc;f
+aẖum,brother,n,s;nom;m
+aẖim,brother,n,s;gen;m
+aẖam,brother,n,s;acc;m
+aẖū,brothers,n,pl;nom;m
+aẖī,brothers,n,pl;gen;acc;m
+alpum,ox;bull,n,s;nom;m
+alpim,ox;bull,n,s;gen;m
+alpam,ox;bull,n,s;acc;m
+alpū,oxen;bulls,n,pl;nom;m
+alpī,oxen;bulls,n,pl;gen;acc;m
+eṭlum,young man;youth,n,s;nom;m
+eṭlim,young man;youth,n,s;gen;m
+eṭlam,young man;youth,n,s;acc;m
+eṭlūtum,young men;youth,n,pl;nom;m
+eṭlūtim,young men;youth,n,pl;gen;acc;m
+kakkum,weapon,n,s;nom;m
+kakkim,weapon,n,s;gen;m
+kakkam,weapon,n,s;acc;m
+kakkū,weapons,n,pl;nom;m
+kakkī,weapons,n,pl;gen;acc;m
+napištum,life;vigor;good health;person;personnel;self;throat,n,s;nom;f
+napištim,life;vigor;good health;person;personnel;self;throat,n,s;gen;f
+napištam,life;vigor;good health;person;personnel;self;throat,n,s;acc;f
+napšātum,life;vigor;good health;persons;personnel;selves;throats,n,pl;nom;f
+napšātim,life;vigor;good health;persons;personnel;selves;throats,n,pl;gen;acc;f
+šamnum,oil;fat,n,s;nom;m
+šamnim,oil;fat,n,s;gen;m
+šamnam,oil;fat,n,s;acc;m
+šamnū,oils;fats,n,pl;nom;m
+šamnī,oils;fats,n,pl;gen;acc;m
+šikarum,beer;intoxicating liquid;alcohol,n,s;nom;m
+šikarim,beer;intoxicating liquid;alcohol,n,s;gen;m
+šikaram,beer;intoxicating liquid;alcohol,n,s;acc;m
+šikarū,beers;intoxicating liquids,n,pl;nom;m
+šikarī,beers;intoxicating liquids,n,pl;gen;acc;m
+damqum,good;of good quality;beautiful;favorable;expert,adj,s;nom;m
+damqim,good;of good quality;beautiful;favorable;expert,adj,s;gen;m
+damqam,good;of good quality;beautiful;favorable;expert,adj,s;acc;m
+damqūtum,good;of good quality;beautiful;favorable;expert,adj,pl;nom;m
+damqūtim,good;of good quality;beautiful;favorable;expert,adj,pl;gen;acc;m
+damiqtum,good;of good quality;beautiful;favorable;expert,adj,s;nom;f
+damiqtim,good;of good quality;beautiful;favorable;expert,adj,s;gen;f
+damiqtam,good;of good quality;beautiful;favorable;expert,adj,s;acc;f
+damqātum,good;of good quality;beautiful;favorable;expert,adj,pl;nom;f
+damqātim,good;of good quality;beautiful;favorable;expert,adj,pl;gen;acc;f
+damiqtum,good;goodness;favor;luck;fame,n,s;nom;f
+damiqtim,good;goodness;favor;luck;fame,n,s;gen;f
+damiqtam,good;goodness;favor;luck;fame,n,s;acc;f
+dannum,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;nom;m
+dannim,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;gen;m
+dannam,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;acc;m
+dannūtum,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,pl;nom;m
+dannūtim,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,pl;gen;acc;m
+dannatum,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;nom;f
+dannatim,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;gen;f
+dannatam,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,s;acc;f
+dannātum,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,pl;nom;f
+dannātim,strong;solid;mighty;powerful;fortified;fierce;savage;severe;difficult;urgent,adj,pl;gen;acc;f
+dannatum,famine;hard times;fortress,n,s;nom;f
+dannatim,famine;hard times;fortress,n,s;gen;f
+dannatam,famine;hard times;fortress,n,s;acc;f
+dannātum,famines;hard times;fortresses,n,pl;nom;f
+dannātim,famines;hard times;fortresses,n,pl;gen;acc;f
+ẖalqum,escaped;missing;lost,adj,s;nom;m
+ẖalqim,escaped;missing;lost,adj,s;gen;m
+ẖalqam,escaped;missing;lost,adj,s;acc;m
+ẖalqūtum,escaped;missing;lost,adj,pl;nom;m
+ẖalqūtim,escaped;missing;lost,adj,pl;gen;acc;m
+ẖaliqtum,escaped;missing;lost,adj,s;nom;f
+ẖaliqtim,escaped;missing;lost,adj,s;gen;f
+ẖaliqtam,escaped;missing;lost,adj,s;acc;f
+ẖalqātum,escaped;missing;lost,adj,pl;nom;f
+ẖalqātim,escaped;missing;lost,adj,pl;gen;acc;f
+kašdum,successful;achieved;conquered;having arrived;available,adj,s;nom;m
+kašdim,successful;achieved;conquered;having arrived;available,adj,s;gen;m
+kašdam,successful;achieved;conquered;having arrived;available,adj,s;acc;m
+kašdūtum,successful;achieved;conquered;having arrived;available,adj,pl;nom;m
+kašdūtim,successful;achieved;conquered;having arrived;available,adj,pl;gen;acc;m
+kašittum,successful;achieved;conquered;having arrived;available,adj,s;nom;f
+kašittim,successful;achieved;conquered;having arrived;available,adj,s;gen;f
+kašittam,successful;achieved;conquered;having arrived;available,adj,s;acc;f
+kašdātum,successful;achieved;conquered;having arrived;available,adj,pl;nom;f
+kašdātim,successful;achieved;conquered;having arrived;available,adj,pl;gen;acc;f
+maqtum,fallen;collapsed;in ruins,adj,s;nom;m
+maqtim,fallen;collapsed;in ruins,adj,s;gen;m
+maqtam,fallen;collapsed;in ruins,adj,s;acc;m
+maqtūtum,fallen;collapsed;in ruins,adj,pl;nom;m
+maqtūtim,fallen;collapsed;in ruins,adj,pl;gen;acc;m
+maqittum,fallen;collapsed;in ruins,adj,s;nom;f
+maqittim,fallen;collapsed;in ruins,adj,s;gen;f
+maqittam,fallen;collapsed;in ruins,adj,s;acc;f
+maqtātum,fallen;collapsed;in ruins,adj,pl;nom;f
+maqtātim,fallen;collapsed;in ruins,adj,pl;gen;acc;f
+marṣum,sick;ill;diseased;painful;difficult,adj,s;nom;m
+marṣim,sick;ill;diseased;painful;difficult,adj,s;gen;m
+marṣam,sick;ill;diseased;painful;difficult,adj,s;acc;m
+marṣūtum,sick;ill;diseased;painful;difficult,adj,pl;nom;m
+marṣūtim,sick;ill;diseased;painful;difficult,adj,pl;gen;acc;m
+maruštum,sick;ill;diseased;painful;difficult,adj,s;nom;f
+maruštim,sick;ill;diseased;painful;difficult,adj,s;gen;f
+maruštam,sick;ill;diseased;painful;difficult,adj,s;acc;f
+marṣātum,sick;ill;diseased;painful;difficult,adj,pl;nom;f
+marṣātim,sick;ill;diseased;painful;difficult,adj,pl;gen;acc;f
+maruštum,difficulty;hardship;trouble;duress,n,s;nom;f
+maruštim,difficulty;hardship;trouble;duress,n,s;gen;f
+maruštam,difficulty;hardship;trouble;duress,n,s;acc;f
+marṣātum,difficulties;hardships;troubles;duress,n,pl;nom;f
+marṣātim,difficulties;hardships;troubles;duress,n,pl;gen;acc;f
+nakrum,hostile;inimical;foreign,adj,s;nom;m
+nakrim,hostile;inimical;foreign,adj,s;gen;m
+nakram,hostile;inimical;foreign,adj,s;acc;m
+nakrūtum,hostile;inimical;foreign,adj,pl;nom;m
+nakrūtim,hostile;inimical;foreign,adj,pl;gen;acc;m
+nakrātum,hostile;inimical;foreign,adj,pl;nom;f
+nakrātim,hostile;inimical;foreign,adj,pl;gen;acc;f
+nakirum,hostile;inimical;foreign,adj,s;nom;m
+nakirim,hostile;inimical;foreign,adj,s;gen;m
+nakiram,hostile;inimical;foreign,adj,s;acc;m
+nakarum,hostile;inimical;foreign,adj,s;nom;m
+nakarim,hostile;inimical;foreign,adj,s;gen;m
+nakaram,hostile;inimical;foreign,adj,s;acc;m
+nakirtum,hostile;inimical;foreign,adj,s;nom;f
+nakirtim,hostile;inimical;foreign,adj,s;gen;f
+nakirtam,hostile;inimical;foreign,adj,s;acc;f
+nakartum,hostile;inimical;foreign,adj,s;nom;f
+nakartim,hostile;inimical;foreign,adj,s;gen;f
+nakartam,hostile;inimical;foreign,adj,s;acc;f
+nakrum,enemy;foe,n,s;nom;m
+nakrim,enemy;foe,n,s;gen;m
+nakram,enemy;foe,n,s;acc;m
+nakirum,enemy;foe,n,s;nom;m
+nakirim,enemy;foe,n,s;gen;m
+nakiram,enemy;foe,n,s;acc;m
+nakirtum,enemy;foe,n,s;nom;f
+nakirtim,enemy;foe,n,s;gen;f
+nakirtam,enemy;foe,n,s;acc;f
+nakirū,enemies;foes,n,pl;nom;m
+nakirī,enemies;foes,n,pl;gen;acc;m
+nakarum,enemy;foe,n,s;nom;m
+nakarim,enemy;foe,n,s;gen;m
+nakaram,enemy;foe,n,s;acc;m
+nakartum,enemy;foe,n,s;nom;f
+nakartim,enemy;foe,n,s;gen;f
+nakartam,enemy;foe,n,s;acc;f
+nakarū,enemies;foes,n,pl;nom;m
+nakarī,enemies;foes,n,pl;gen;acc;m
+rapšum,wide;broad,adj,s;nom;m
+rapšim,wide;broad,adj,s;gen;m
+rapšam,wide;broad,adj,s;acc;m
+rapšūtum,wide;broad,adj,pl;nom;m
+rapšūtim,wide;broad,adj,pl;gen;acc;m
+rapaštum,wide;broad,adj,s;nom;f
+rapaštim,wide;broad,adj,s;gen;f
+rapaštam,wide;broad,adj,s;acc;f
+rapšātum,wide;broad,adj,pl;nom;f
+rapšātim,wide;broad,adj,pl;gen;acc;f
+uznum rapaštum,great intelligence;understanding,adj,id
+ṣabtum,seized;deposited;captive;prisoner,adj,s;nom;m
+ṣabtim,seized;deposited;captive;prisoner,adj,s;gen;m
+ṣabtam,seized;deposited;captive;prisoner,adj,s;acc;m
+ṣabtūtum,seized;deposited;captive;prisoner,adj,pl;nom;m
+ṣabtūtim,seized;deposited;captive;prisoner,adj,pl;gen;acc;m
+ṣabittum,seized;deposited;captive;prisoner,adj,s;nom;f
+ṣabittim,seized;deposited;captive;prisoner,adj,s;gen;f
+ṣabittam,seized;deposited;captive;prisoner,adj,s;acc;f
+ṣabtātum,seized;deposited;captive;prisoner,adj,pl;nom;f
+ṣabtātim,seized;deposited;captive;prisoner,adj,pl;gen;acc;f
+šaknum,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;nom;m
+šaknim,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;gen;m
+šaknam,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;acc;m
+šaknūtum,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,pl;nom;m
+šaknūtim,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,pl;gen;acc;m
+šakittum,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;nom;f
+šakittim,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;gen;f
+šakittam,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,s;acc;f
+šaknātum,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,pl;nom;f
+šaknātim,placed;lying;situated;located;present;established;appointed;endowed;provided;substantivized;governor,adj,pl;gen;acc;f
+šaknum,governor,n,s;nom;m
+šaknim,governor,n,s;gen;m
+šaknam,governor,n,s;acc;m
+šaknū,governors,n,pl;nom;m
+šaknī,governors,n,pl;gen;acc;m
+šarqum,stolen,adj,s;nom;m
+šarqim,stolen,adj,s;gen;m
+šarqam,stolen,adj,s;acc;m
+šarqūtum,stolen,adj,pl;nom;m
+šarqūtim,stolen,adj,pl;gen;acc;m
+šariqtum,stolen,adj,s;nom;f
+šariqtim,stolen,adj,s;gen;f
+šariqtam,stolen,adj,s;acc;f
+šarqātum,stolen,adj,pl;nom;f
+šarqātim,stolen,adj,pl;gen;acc;f
+ṭābum,pleasant;pleasing;sweet;fine;good,adj,s;nom;m
+ṭābim,pleasant;pleasing;sweet;fine;good,adj,s;gen;m
+ṭābam,pleasant;pleasing;sweet;fine;good,adj,s;acc;m
+ṭābūtum,pleasant;pleasing;sweet;fine;good,adj,pl;nom;m
+ṭābūtim,pleasant;pleasing;sweet;fine;good,adj,pl;gen;acc;m
+ṭābtum,pleasant;pleasing;sweet;fine;good,adj,s;nom;f
+ṭābtim,pleasant;pleasing;sweet;fine;good,adj,s;gen;f
+ṭābtam,pleasant;pleasing;sweet;fine;good,adj,s;acc;f
+ṭābātum,pleasant;pleasing;sweet;fine;good,adj,pl;nom;f
+ṭābātim,pleasant;pleasing;sweet;fine;good,adj,pl;gen;acc;f
+ul,not,adv
+ula,not,adv
