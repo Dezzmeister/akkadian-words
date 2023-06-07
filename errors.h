@@ -8,7 +8,10 @@
 typedef enum {
 	MissingWord,
 	UnknownWordClass,
-	UnknownGrammarKind
+	UnknownGrammarKind,
+	MissingRightParen,
+	UnknownRelation,
+	TooManyFields
 } ParseErrorType;
 
 typedef struct DictParseError {

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <locale>
 #include <map>
+#include <optional>
 #include <random>
 #include <string>
 #include <vector>
@@ -30,19 +31,28 @@ const std::wstring WORD_CLASSES[] = {
 	L"gen",
 	L"acc",
 	L"inf",
-	L"pret",
 	L"G",
 	L"id"
 };
 
+// These relations can be defined in the dictionary. The reverse relations will be set when parsing the dictionary.
+// (For example, you can define a preterite of an infinitive, but not an infinitive of a preterite)
+const std::wstring RELATIONS[] = {
+	L"pret",
+	L"va",
+	L"subst"
+};
+
 const size_t NUM_GRAMMAR_KINDS = (sizeof GRAMMAR_KINDS) / (sizeof * GRAMMAR_KINDS);
 const size_t NUM_WORD_CLASSES = (sizeof WORD_CLASSES) / (sizeof * WORD_CLASSES);
+const size_t NUM_RELATIONS = (sizeof RELATIONS) / (sizeof * RELATIONS);
 
 typedef enum {
 	Noun,
 	Pronoun,
 	Adjective,
 	Article,
+	Conjunction,
 	Preposition,
 	Verb,
 	Adverb
@@ -58,19 +68,43 @@ typedef enum {
 	Genitive,
 	Accusative,
 	Infinitive,
-	Preterite,
 	GStem,
 	Idiom
 } WordClass;
+
+typedef enum {
+	PreteriteOf,
+	VerbalAdjOf,
+	// Substantivized adjective
+	SubstOf,
+	InfinitiveOf,
+	HasSubst,
+	HasVerbalAdj,
+} WordRelationKind;
+
+typedef struct WordRelation {
+	WordRelationKind kind;
+	std::wstring word;
+
+	WordRelation(WordRelationKind kind, std::wstring word);
+
+	bool operator<(const WordRelation& rhs) const;
+
+} WordRelation;
 
 typedef struct DictEntry {
 	std::vector<WordClass> word_types;
 	std::vector<std::wstring> defns;
 	GrammarKind grammar_kind;
+	std::vector<WordRelation> relations;
 
 	DictEntry() = default;
 
-	DictEntry(const std::vector<WordClass> word_types, const std::vector<std::wstring> defns, GrammarKind grammar_kind);
+	DictEntry(const std::vector<WordClass> word_types, const std::vector<std::wstring> defns, GrammarKind grammar_kind, std::vector<WordRelation> relations);
+
+	void add_relation(WordRelation rel);
+
+	bool has_word_classes(std::vector<WordClass> classes);
 
 	DictEntry merge(DictEntry& other);
 	bool can_merge(DictEntry& other);
@@ -83,6 +117,9 @@ typedef struct Dictionary {
 	std::vector<std::wstring> akk_keys;
 
 	Dictionary();
+
+	std::optional<DictEntry*> get_akk(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
+	std::optional<DictEntry*> get_engl(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
 
 	void insert_engl(std::wstring engl, DictEntry entry);
 	void insert_akk(std::wstring akk, DictEntry entry);

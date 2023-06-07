@@ -15,6 +15,15 @@ std::wstring DictParseError::message() {
 	case ParseErrorType::UnknownGrammarKind: {
 		return prefix + L"Unknown part of speech";
 	}
+	case ParseErrorType::MissingRightParen: {
+		return prefix + L"Missing closing right parenthesis";
+	}
+	case ParseErrorType::UnknownRelation: {
+		return prefix + L"Unknown relation name";
+	}
+	case ParseErrorType::TooManyFields: {
+		return prefix + L"Too many fields";
+	}
 	default: {
 		return prefix + L"Unknown error";
 	}
