@@ -24,6 +24,12 @@ std::wstring DictParseError::message() {
 	case ParseErrorType::TooManyFields: {
 		return prefix + L"Too many fields";
 	}
+	case ParseErrorType::FileNotFound: {
+		return prefix + L"File not found";
+	}
+	case ParseErrorType::UnknownError: {
+		return prefix + L"Unknown error";
+	}
 	default: {
 		return prefix + L"Unknown error";
 	}

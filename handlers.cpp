@@ -1,4 +1,5 @@
-﻿#include <assert.h>
+﻿#include <algorithm>
+#include <assert.h>
 #include <iomanip>
 #include <Windows.h>
 #include <CommCtrl.h>
@@ -8,12 +9,13 @@
 
 #include "common.h"
 #include "components.h"
+#include "errors.h"
 #include "handlers.h"
 #include "resource.h"
 
-static std::wstring get_input_txt(HWND hDlg, int resId) {
+static std::wstring get_input_txt(HWND hdlg, int res_id) {
     wchar_t buf[MAX_ANSWER_CHARS + 1];
-    int chars_read = GetDlgItemTextW(hDlg, resId, buf, MAX_ANSWER_CHARS);
+    int chars_read = GetDlgItemTextW(hdlg, res_id, buf, MAX_ANSWER_CHARS);
     buf[chars_read] = '\0';
 
     return std::wstring(buf);
@@ -25,12 +27,33 @@ static std::wstring get_word_class_str(std::vector<WordClass>& classes) {
     for (size_t i = 0; i < classes.size() - 1; i++) {
         out += WORD_CLASSES[classes[i]] + L", ";
     }
-
+    
     if (classes.size() != 0) {
         out += WORD_CLASSES[classes[classes.size() - 1]];
     }
 
     return out;
+}
+
+/**
+ * This definitely doesn't cover every whitespace character but it's good enough for our purposes
+ */
+static bool is_whitespace(wchar_t c) {
+    return c == L' ' || c == L'\r' || c == L'\n' || c == L'\t';
+}
+
+static std::wstring trim(std::wstring& str) {
+    int start = 0;
+    int end = str.size();
+
+    while (is_whitespace(str[start])) start++;
+    while (is_whitespace(str[end - 1])) end--;
+
+    if (end < start) {
+        return L"";
+    }
+
+    return str.substr(start, end - start);
 }
 
 void PracticeState::reset() {
@@ -66,20 +89,21 @@ std::wstring PracticeState::get_summary(Dictionary& dict, bool engl, bool wasCor
 
     DictEntry entry = this->entry;
 
+    // Find the Akkadian word's definition
     if (engl && wasCorrect) {
-        std::vector<DictEntry> entries = dict.akk_to_engl[answer];
+        const std::vector<DictEntry>* entries = *dict.get_akk(answer);
 
-        for (DictEntry e : entries) {
+        for (const DictEntry& e : *entries) {
             if (e.grammar_kind == entry.grammar_kind && e.word_types == entry.word_types) {
                 entry = e;
                 this->word = answer;
-                goto found;
+                break;
             }
         }
 
-        throw 1;
+        // This is unreachable because at this point we know that the answer exists in the dictionary
+        __assume(false);
     }
-found:
 
     std::wostringstream score;
     score << std::fixed << std::setprecision(2) << ((correct / (double)total) * 100);
@@ -106,6 +130,14 @@ std::wstring PracticeState::get_question() {
         attrs += L"; " + get_word_class_str(entry.word_types);
     }
 
+    bool is_pret_of = std::find_if(entry.relations.begin(), entry.relations.end(), [](const WordRelation& w) {
+        return w.kind == WordRelationKind::PreteriteOf;
+    }) != entry.relations.end();
+
+    if (is_pret_of) {
+        attrs += L", pret";
+    }
+
     return word + L" (" + attrs + L")";
 }
 
@@ -113,7 +145,7 @@ static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, 
     UNREFERENCED_PARAMETER(l_param);
 
     static PracticeState state;
-    
+
     HWND word_hwnd = GetDlgItem(hdlg, IDC_WORD);
     HWND summary_hwnd = GetDlgItem(hdlg, IDC_SUMMARY);
     HWND answer_hwnd = GetDlgItem(hdlg, IDC_ANSWER);
@@ -123,7 +155,6 @@ static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, 
     case WM_INITDIALOG: {
         Edit_LimitText(answer_hwnd, MAX_ANSWER_CHARS);
         SetWindowSubclass(answer_hwnd, AkkadianEditControl, 0, NULL);
-
         state.reset();
         state.new_word(Akk::dict, engl);
         SetWindowTextW(word_hwnd, state.get_question().c_str());
@@ -153,10 +184,71 @@ static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, 
     return (INT_PTR)FALSE;
 }
 
+static INT_PTR CALLBACK LookupDialog(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param, bool engl) {
+    UNREFERENCED_PARAMETER(l_param);
+
+    const static int CUTOFF = 4;
+    const static int LIMIT = 15;
+
+    const static wchar_t * default_txt = LR"(
+Type a word into the box and press enter to search for definitions. Press the up arrow key
+ in the box to cycle diacritical marks for the character to the left of the cursor.
+    )";
+
+    HWND results_hwnd = GetDlgItem(hdlg, IDC_LOOKUP_RESULTS);
+    HWND input_hwnd = GetDlgItem(hdlg, IDC_LOOKUP_INPUT);
+
+    switch (message) {
+    case WM_INITDIALOG: {
+        SetWindowSubclass(input_hwnd, AkkadianEditControl, 0, NULL);
+        SetWindowTextW(results_hwnd, default_txt);
+        return (INT_PTR)TRUE;
+    }
+    case WM_COMMAND: {
+        if (LOWORD(w_param) == IDCANCEL) {
+            EndDialog(hdlg, LOWORD(w_param));
+            return (INT_PTR)TRUE;
+        }
+        else if (LOWORD(w_param) == IDOK) {
+            std::wstring query = get_input_txt(hdlg, IDC_LOOKUP_INPUT);
+            query = trim(query);
+            std::vector<std::wstring> results = Akk::dict.search(query, LIMIT, CUTOFF, engl);
+
+            if (results.size() == 0) {
+                SetWindowTextW(results_hwnd, L"No results");
+            }
+
+            else {
+                std::wstring result_summary;
+
+                for (std::wstring& res : results) {
+                    result_summary += engl ? Akk::dict.engl_summary(res) : Akk::dict.akk_summary(res);
+                }
+
+                result_summary = trim(result_summary);
+
+                SetWindowTextW(results_hwnd, result_summary.c_str());
+            }
+            return (INT_PTR)TRUE;
+        }
+        break;
+    }
+    }
+    return (INT_PTR)FALSE;
+}
+
 INT_PTR CALLBACK PracticeEnglish(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
     return PracticeDialog(hdlg, message, w_param, l_param, true);
 }
 
 INT_PTR CALLBACK PracticeAkkadian(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
     return PracticeDialog(hdlg, message, w_param, l_param, false);
+}
+
+INT_PTR CALLBACK LookupEnglish(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return LookupDialog(hdlg, message, w_param, l_param, true);
+}
+
+INT_PTR CALLBACK LookupAkkadian(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return LookupDialog(hdlg, message, w_param, l_param, false);
 }

@@ -1,13 +1,16 @@
 // AkkadianPractice.cpp : Defines the entry point for the application.
 //
+
 #include <time.h>
+#include "dict.h"
 
 #include "framework.h"
-#include "AkkadianWords.h"
 #include "handlers.h"
 #include "errors.h"
+#include "resource.h"
 
 #define MAX_LOADSTRING 100
+#define DICT_FILENAME _T("dict.dat")
 
 // Global Variables:
 HINSTANCE h_inst;                                // current instance
@@ -35,28 +38,19 @@ int APIENTRY wWinMain(_In_ HINSTANCE h_instance,
     srand((unsigned int)time(&t));
 
     try {
-        Akk::dict = Akk::load_dict(DICT_FILENAME);
+        Akk::dict = Dictionary(DICT_FILENAME);
     }
-    catch (int err) {
-        switch (err) {
-        case UERR_FILE_NOT_FOUND: {
+    catch (DictParseError err) {
+        std::wstring msg = err.message();
+
+        if (err.err_type == ParseErrorType::FileNotFound) {
             MessageBoxW(nullptr,
                 L"File not found! Expected dict.dat in working directory",
                 L"Fatal Error",
                 MB_ICONERROR | MB_OK);
-            return err;
+            return -1;
         }
-        default: {
-            MessageBoxW(nullptr,
-                L"Unknown error",
-                L"Fatal Error",
-                MB_ICONERROR | MB_OK);
-            return err;
-        }
-        }
-    }
-    catch (DictParseError err) {
-        std::wstring msg = err.message();
+
         MessageBoxW(nullptr,
             msg.c_str(),
             L"Fatal Error",
@@ -78,7 +72,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE h_instance,
         MessageBoxW(nullptr,
             L"Failed to load logo",
             L"Error",
-            MB_ICONERROR | MB_OK);
+            MB_ICONERROR | MB_OK
+        );
     }
 
     // Perform application initialization:
@@ -200,6 +195,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM w_param, LPARAM l_param
                 break;
             case ID_PRACTICE_AKKADIAN:
                 DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeAkkadian);
+                break;
+            case ID_LOOKUP_ENGLISH:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_LOOKUP), hwnd, LookupEnglish);
+                break;
+            case ID_LOOKUP_AKKADIAN:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_LOOKUP), hwnd, LookupAkkadian);
                 break;
             default:
                 return DefWindowProc(hwnd, message, w_param, l_param);

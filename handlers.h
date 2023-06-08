@@ -1,3 +1,8 @@
+/**
+ * Dialog callback functions and other related functions.
+ *
+ * Author: Joe Desmond - desmonji@bc.edu
+ */
 #pragma once
 #include <windows.h>
 
@@ -19,3 +24,7 @@ typedef struct PracticeState {
 INT_PTR CALLBACK PracticeEnglish(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
 
 INT_PTR CALLBACK PracticeAkkadian(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam);
+
+INT_PTR CALLBACK LookupEnglish(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param);
+
+INT_PTR CALLBACK LookupAkkadian(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param);

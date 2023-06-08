@@ -1,7 +1,9 @@
+/**
+ * Error types.
+ * 
+ * Author: Joe Desmond - desmonji@bc.edu
+ */
 #pragma once
-
-#define UERR_FILE_NOT_FOUND	1
-#define UERR_UNKNOWN		2
 
 #include <string>
 
@@ -11,7 +13,9 @@ typedef enum {
 	UnknownGrammarKind,
 	MissingRightParen,
 	UnknownRelation,
-	TooManyFields
+	TooManyFields,
+	FileNotFound,
+	UnknownError
 } ParseErrorType;
 
 typedef struct DictParseError {

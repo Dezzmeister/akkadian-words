@@ -478,11 +478,11 @@ maruštim,sick;ill;diseased;painful;difficult,adj,va(marāṣum);s;gen;f
 maruštam,sick;ill;diseased;painful;difficult,adj,va(marāṣum);s;acc;f
 marṣātum,sick;ill;diseased;painful;difficult,adj,va(marāṣum);pl;nom;f
 marṣātim,sick;ill;diseased;painful;difficult,adj,va(marāṣum);pl;gen;acc;f
-maruštum,difficulty;hardship;trouble;duress,n,subst(maruštim);s;nom;f
-maruštim,difficulty;hardship;trouble;duress,n,subst(maruštim);s;gen;f
-maruštam,difficulty;hardship;trouble;duress,n,subst(maruštim);s;acc;f
-marṣātum,difficulties;hardships;troubles;duress,n,subst(maruštim);pl;nom;f
-marṣātim,difficulties;hardships;troubles;duress,n,subst(maruštim);pl;gen;acc;f
+maruštum,difficulty;hardship;trouble;duress,n,subst(maruštum);s;nom;f
+maruštim,difficulty;hardship;trouble;duress,n,subst(maruštum);s;gen;f
+maruštam,difficulty;hardship;trouble;duress,n,subst(maruštum);s;acc;f
+marṣātum,difficulties;hardships;troubles;duress,n,subst(maruštum);pl;nom;f
+marṣātim,difficulties;hardships;troubles;duress,n,subst(maruštum);pl;gen;acc;f
 nakrum,hostile;inimical;foreign,adj,va(nakārum);s;nom;m
 nakrim,hostile;inimical;foreign,adj,va(nakārum);s;gen;m
 nakram,hostile;inimical;foreign,adj,va(nakārum);s;acc;m

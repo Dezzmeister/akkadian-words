@@ -144,7 +144,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AkkadianWords.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="components.h" />
     <ClInclude Include="errors.h" />
@@ -160,6 +159,7 @@
     <ClCompile Include="dict.cpp" />
     <ClCompile Include="errors.cpp" />
     <ClCompile Include="handlers.cpp" />
+    <ClCompile Include="search.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="AkkadianWords.rc" />
