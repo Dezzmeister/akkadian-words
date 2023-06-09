@@ -17,6 +17,7 @@
 
 const std::wstring GRAMMAR_KINDS[] = {
 	L"n",
+	L"apr",
 	L"pr",
 	L"adj",
 	L"art",
@@ -33,8 +34,6 @@ const std::wstring WORD_CLASSES[] = {
 	L"dual",
 	L"pl",
 	L"nom",
-	L"gen",
-	L"acc",
 	L"inf",
 	L"G",
 	L"id",
@@ -51,16 +50,39 @@ const std::wstring RELATIONS[] = {
 	// va(nasāẖum) indicates that the current word is a verbal adjective of nasāẖum
 	L"va",
 	// subst(nakrum) indicates that the current word is a substantivized noun form of nakrum
-	L"subst"
+	L"subst",
+	// bf(nakrum) indicates that the current word is the bound form of nakrum. 'nakrum' must
+	// be a noun, adjective, or infinitive
+	L"bf",
+	// gen(nakrum) indicates that the current word is nakrum in the genitive case. 'nakrum'
+	// must have the nominative word class and the same grammar kind as the current word
+	L"gen",
+	// acc(nakrum) indicates that the current word is nakrum in the accusative case. 'nakrum'
+	// must have the nominative word class and the same grammar kind as the current word
+	L"acc",
+	// Dative case for use after 'ana'
+	L"dat",
+	// Not a real relation - indicates the base of a word. For example, the base of
+	// rubâtum is rubā. Not necessary if the base is obvious
+	L"base"
 };
 
 const std::wstring RELATION_NAMES[] = {
 	L"Preterite of",
 	L"Verbal Adj. of",
 	L"Substantivized N. of",
+	L"Bound Form of",
+	L"Gen. of",
+	L"Acc. of",
+	L"Dative of",
+	L"Base",
 	L"Preterite",
 	L"Substantivized",
-	L"Verbal Adj."
+	L"Verbal Adj.",
+	L"Bound Form",
+	L"Gen.",
+	L"Acc.",
+	L"Dative"
 };
 
 const size_t NUM_GRAMMAR_KINDS = (sizeof GRAMMAR_KINDS) / (sizeof * GRAMMAR_KINDS);
@@ -74,6 +96,7 @@ const size_t NUM_FULL_RELATIONS = (sizeof RELATION_NAMES) / (sizeof * RELATION_N
 typedef enum {
 	Noun,
 	Pronoun,
+	AnaphoricPronoun,
 	Adjective,
 	Article,
 	Conjunction,
@@ -89,8 +112,6 @@ typedef enum {
 	Dual,
 	Plural,
 	Nominative,
-	Genitive,
-	Accusative,
 	Infinitive,
 	GStem,
 	Idiom,
@@ -104,9 +125,18 @@ typedef enum {
 	VerbalAdjOf,
 	// Substantivized adjective
 	SubstOf,
+	BoundFormOf,
+	GenitiveOf,
+	AccusativeOf,
+	DativeOf,
+	Base,
 	HasPreterite,
 	HasSubst,
 	HasVerbalAdj,
+	HasBoundForm,
+	HasGenitive,
+	HasAccusative,
+	HasDative
 } WordRelationKind;
 
 typedef struct WordRelation {
@@ -220,16 +250,15 @@ private:
 	std::vector<std::wstring> basic_search(std::wstring& query, size_t limit, int cutoff) const;
 	std::vector<std::wstring> engl_search(std::wstring& query, size_t limit) const;
 
-	void resolve_relations(std::wstring& word, std::vector<WordRelation>& rels);
+	void resolve_relations(std::wstring& word, GrammarKind grammar_kind, std::vector<WordRelation>& rels);
 
 	void insert_engl(std::wstring engl, DictEntry entry);
 	void insert_akk(std::wstring akk, DictEntry entry);
 
-	std::optional<DictEntry*> get_akk_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
+	std::optional<DictEntry*> get_akk_filters(std::wstring& word, std::vector<GrammarKind> kinds, std::vector<WordClass> word_classes);
 	std::optional<DictEntry*> get_engl_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
 } Dictionary;
 
 namespace Akk {
 	extern Dictionary dict;
-	Dictionary load_dict(std::wstring filename);
 }

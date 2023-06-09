@@ -5,6 +5,7 @@
 #include <memory>
 #include <set>
 #include <sstream>
+#include <tuple>
 #include <vector>
 #include <windows.h>
 
@@ -258,7 +259,7 @@ Dictionary::Dictionary(std::wstring filename) {
 	// Word relations are resolved after the entire dictionary has been read. This means that
 	// a PreteriteOf relation can be defined before the corresponding infinitive, or a 
 	// VerbalAdjOf before the infinitive, etc.
-	std::vector<std::pair<std::wstring, std::vector<WordRelation>>> unresolved_rels;
+	std::vector<std::tuple<std::wstring, GrammarKind, std::vector<WordRelation>>> unresolved_rels;
 	int line_num = 1;
 
 	for (std::wstring line : lines) {
@@ -280,7 +281,8 @@ Dictionary::Dictionary(std::wstring filename) {
 		if (fields.size() > 3) {
 			attrs = parse_word_attrs(fields[3], line_num);
 			std::sort(attrs.first.begin(), attrs.first.end());
-			unresolved_rels.push_back(std::pair<std::wstring, std::vector<WordRelation>>(akk_word, attrs.second));
+
+			unresolved_rels.push_back(std::tuple<std::wstring, GrammarKind, std::vector<WordRelation>>(akk_word, grammar_kind, attrs.second));
 		}
 
 		DictEntry akk_entry(attrs.first, engl_words, grammar_kind, attrs.second);
@@ -294,8 +296,8 @@ Dictionary::Dictionary(std::wstring filename) {
 		line_num++;
 	}
 
-	for (auto& rel_pair : unresolved_rels) {
-		resolve_relations(rel_pair.first, rel_pair.second);
+	for (auto& [word, grammar_kind, rels] : unresolved_rels) {
+		resolve_relations(word, grammar_kind, rels);
 	}
 
 	std::sort(akk_keys.begin(), akk_keys.end());
@@ -328,7 +330,7 @@ std::optional<const std::vector<DictEntry>*> Dictionary::get_engl(std::wstring& 
 	return std::optional<const std::vector<DictEntry>*>(entry);
 }
 
-std::optional<DictEntry*> Dictionary::get_akk_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes) {
+std::optional<DictEntry*> Dictionary::get_akk_filters(std::wstring& word, std::vector<GrammarKind> kinds, std::vector<WordClass> word_classes) {
 	if (!akk_to_engl.count(word)) {
 		return std::nullopt;
 	}
@@ -338,7 +340,9 @@ std::optional<DictEntry*> Dictionary::get_akk_filters(std::wstring& word, Gramma
 	for (size_t i = 0; i < v.size(); i++) {
 		DictEntry& d = v[i];
 
-		if (d.grammar_kind == grammar_kind && d.has_word_classes(word_classes)) {
+		const bool has_kind = std::find(kinds.begin(), kinds.end(), d.grammar_kind) != kinds.end();
+
+		if (has_kind && d.has_word_classes(word_classes)) {
 			return std::optional<DictEntry*>(&v[i]);
 		}
 	}
@@ -421,12 +425,12 @@ std::pair<std::wstring, DictEntry> Dictionary::random_akk() {
 	return std::make_pair(akk, entry);
 }
 
-void Dictionary::resolve_relations(std::wstring& word, std::vector<WordRelation>& rels) {
+void Dictionary::resolve_relations(std::wstring& word, GrammarKind grammar_kind, std::vector<WordRelation>& rels) {
 	for (size_t i = 0; i < rels.size(); i++) {
 		WordRelation& rel = rels[i];
 
 		if (rel.kind == WordRelationKind::PreteriteOf) {
-			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, GrammarKind::Verb, { WordClass::Infinitive });
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { GrammarKind::Verb }, { WordClass::Infinitive });
 			if (!entry_opt.has_value()) {
 				OutputDebugStringW((L"Unknown infinitive mapped by preterite: " + rel.word + L"\n").c_str());
 			}
@@ -437,7 +441,7 @@ void Dictionary::resolve_relations(std::wstring& word, std::vector<WordRelation>
 			}
 		}
 		else if (rel.kind == WordRelationKind::VerbalAdjOf) {
-			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, GrammarKind::Verb, { WordClass::Infinitive });
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { GrammarKind::Verb }, { WordClass::Infinitive });
 			if (!entry_opt.has_value()) {
 				OutputDebugStringW((L"Unknown infinitive mapped by verbal adj: " + rel.word + L"\n").c_str());
 			}
@@ -448,7 +452,7 @@ void Dictionary::resolve_relations(std::wstring& word, std::vector<WordRelation>
 			}
 		}
 		else if (rel.kind == WordRelationKind::SubstOf) {
-			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, GrammarKind::Adjective, {});
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { GrammarKind::Adjective }, {});
 			if (!entry_opt.has_value()) {
 				OutputDebugStringW((L"Unknown adjective mapped by substantivized noun: " + rel.word + L"\n").c_str());
 			}
@@ -456,6 +460,60 @@ void Dictionary::resolve_relations(std::wstring& word, std::vector<WordRelation>
 				DictEntry* entry = *entry_opt;
 
 				entry->add_relation(WordRelation(WordRelationKind::HasSubst, word));
+			}
+		}
+		else if (rel.kind == WordRelationKind::BoundFormOf) {
+			std::optional<DictEntry*> entry_opt_n = get_akk_filters(rel.word, { grammar_kind }, {});
+			std::optional<DictEntry*> entry_opt_v = get_akk_filters(rel.word, { GrammarKind::Verb }, { WordClass::Infinitive });
+
+			if (!entry_opt_n.has_value() && !entry_opt_v.has_value()) {
+				OutputDebugStringW((L"Unknown n/adj/v mapped by bound form: " + rel.word + L"\n").c_str());
+			}
+			else if (entry_opt_n.has_value()) {
+				DictEntry* entry = *entry_opt_n;
+
+				entry->add_relation(WordRelation(WordRelationKind::HasBoundForm, word));
+			}
+			else {
+				DictEntry* entry = *entry_opt_v;
+
+				entry->add_relation(WordRelation(WordRelationKind::HasBoundForm, word));
+			}
+		}
+		else if (rel.kind == WordRelationKind::GenitiveOf) {
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { grammar_kind }, { WordClass::Nominative });
+
+			if (!entry_opt.has_value()) {
+				OutputDebugStringW((L"Unknown n/adj mapped by genitive case: " + rel.word + L"\n").c_str());
+			}
+			else {
+				DictEntry* entry = *entry_opt;
+
+				entry->add_relation(WordRelation(WordRelationKind::HasGenitive, word));
+			}
+		}
+		else if (rel.kind == WordRelationKind::AccusativeOf) {
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { grammar_kind }, { WordClass::Nominative });
+
+			if (!entry_opt.has_value()) {
+				OutputDebugStringW((L"Unknown n/adj mapped by accusative case: " + rel.word + L"\n").c_str());
+			}
+			else {
+				DictEntry* entry = *entry_opt;
+
+				entry->add_relation(WordRelation(WordRelationKind::HasAccusative, word));
+			}
+		}
+		else if (rel.kind == WordRelationKind::DativeOf) {
+			std::optional<DictEntry*> entry_opt = get_akk_filters(rel.word, { grammar_kind }, { WordClass::Nominative });
+
+			if (!entry_opt.has_value()) {
+				OutputDebugStringW((L"Unknown n/adj/pr mapped by dative case: " + rel.word + L"\n").c_str());
+			}
+			else {
+				DictEntry* entry = *entry_opt;
+
+				entry->add_relation(WordRelation(WordRelationKind::HasDative, word));
 			}
 		}
 	}

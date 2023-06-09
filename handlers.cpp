@@ -130,12 +130,41 @@ std::wstring PracticeState::get_question() {
         attrs += L"; " + get_word_class_str(entry.word_types);
     }
 
-    bool is_pret_of = std::find_if(entry.relations.begin(), entry.relations.end(), [](const WordRelation& w) {
-        return w.kind == WordRelationKind::PreteriteOf;
-    }) != entry.relations.end();
+    bool is_pret_of = false;
+    bool is_gen_of = false;
+    bool is_acc_of = false;
+    bool is_dat = false;
+
+    for (const WordRelation& w : entry.relations) {
+        if (w.kind == WordRelationKind::PreteriteOf) {
+            is_pret_of = true;
+        }
+        else if (w.kind == WordRelationKind::GenitiveOf) {
+            is_gen_of = true;
+        }
+        else if (w.kind == WordRelationKind::AccusativeOf) {
+            is_acc_of = true;
+        }
+        else if (w.kind == WordRelationKind::DativeOf) {
+            is_dat = true;
+        }
+    }
 
     if (is_pret_of) {
         attrs += L", pret";
+    }
+
+    if (is_gen_of && is_acc_of) {
+        attrs += L", gen-acc";
+    }
+    else if (is_gen_of) {
+        attrs += L", gen";
+    }
+    else if (is_acc_of) {
+        attrs += L", acc";
+    }
+    else if (is_dat) {
+        attrs += L", dat";
     }
 
     return word + L" (" + attrs + L")";
