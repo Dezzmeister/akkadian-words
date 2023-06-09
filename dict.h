@@ -37,7 +37,10 @@ const std::wstring WORD_CLASSES[] = {
 	L"acc",
 	L"inf",
 	L"G",
-	L"id"
+	L"id",
+	L"1w",
+	L"2w",
+	L"3w"
 };
 
 // These relations can be defined in the dictionary. The reverse relations will be set when parsing the dictionary.
@@ -90,7 +93,10 @@ typedef enum {
 	Accusative,
 	Infinitive,
 	GStem,
-	Idiom
+	Idiom,
+	IWeak,
+	IIWeak,
+	IIIWeak
 } WordClass;
 
 typedef enum {
