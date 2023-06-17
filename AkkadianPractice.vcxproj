@@ -150,15 +150,18 @@
     <ClInclude Include="dict.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="handlers.h" />
+    <ClInclude Include="practice.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AkkadianWords.cpp" />
+    <ClCompile Include="common.cpp" />
     <ClCompile Include="components.cpp" />
     <ClCompile Include="dict.cpp" />
     <ClCompile Include="errors.cpp" />
     <ClCompile Include="handlers.cpp" />
+    <ClCompile Include="practice.cpp" />
     <ClCompile Include="search.cpp" />
   </ItemGroup>
   <ItemGroup>

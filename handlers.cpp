@@ -1,9 +1,7 @@
 ﻿#include <algorithm>
 #include <assert.h>
-#include <iomanip>
 #include <Windows.h>
 #include <CommCtrl.h>
-#include <sstream>
 #include <string>
 #include <windowsx.h>
 
@@ -12,6 +10,7 @@
 #include "errors.h"
 #include "handlers.h"
 #include "resource.h"
+#include "practice.h"
 
 static std::wstring get_input_txt(HWND hdlg, int res_id) {
     wchar_t buf[MAX_ANSWER_CHARS + 1];
@@ -19,20 +18,6 @@ static std::wstring get_input_txt(HWND hdlg, int res_id) {
     buf[chars_read] = '\0';
 
     return std::wstring(buf);
-}
-
-static std::wstring get_word_class_str(std::vector<WordClass>& classes) {
-    std::wstring out;
-
-    for (size_t i = 0; i < classes.size() - 1; i++) {
-        out += WORD_CLASSES[classes[i]] + L", ";
-    }
-    
-    if (classes.size() != 0) {
-        out += WORD_CLASSES[classes[classes.size() - 1]];
-    }
-
-    return out;
 }
 
 /**
@@ -56,124 +41,10 @@ static std::wstring trim(std::wstring& str) {
     return str.substr(start, end - start);
 }
 
-void PracticeState::reset() {
-    correct = 0;
-    total = 0;
-    word = L"";
-}
-
-void PracticeState::new_word(Dictionary& dict, bool engl) {
-    std::pair<std::wstring, DictEntry> item = engl ? dict.random_engl() : dict.random_akk();
-    word = item.first;
-    entry = item.second;
-}
-
-bool PracticeState::accept_answer(std::wstring& answer) {
-    bool retval = false;
-
-    for (std::wstring defn : entry.defns) {
-        if (defn == answer) {
-            correct++;
-            retval = true;
-        }
-    }
-    total++;
-
-    return retval;
-}
-
-std::wstring PracticeState::get_summary(Dictionary& dict, bool engl, bool wasCorrect, std::wstring answer = L"") {
-    if (total == 0) {
-        return L"0/0";
-    }
-
-    DictEntry entry = this->entry;
-
-    // Find the Akkadian word's definition
-    if (engl && wasCorrect) {
-        const std::vector<DictEntry>* entries = *dict.get_akk(answer);
-
-        for (const DictEntry& e : *entries) {
-            if (e.grammar_kind == entry.grammar_kind && e.word_types == entry.word_types) {
-                entry = e;
-                this->word = answer;
-                break;
-            }
-        }
-
-        // This is unreachable because at this point we know that the answer exists in the dictionary
-        __assume(false);
-    }
-
-    std::wostringstream score;
-    score << std::fixed << std::setprecision(2) << ((correct / (double)total) * 100);
-
-    std::wstring out = std::to_wstring(correct) + L"/" + std::to_wstring(total) 
-        + L" (" + score.str() + L"%) ";
-
-    out += get_question() += L":\n";
-
-    for (size_t i = 0; i < entry.defns.size() - 1; i++) {
-        std::wstring defn = entry.defns[i];
-        out += defn + L", ";
-    }
-
-    out += entry.defns[entry.defns.size() - 1];
-
-    return out;
-}
-
-std::wstring PracticeState::get_question() {
-    std::wstring attrs = GRAMMAR_KINDS[entry.grammar_kind];
-
-    if (entry.word_types.size() != 0) {
-        attrs += L"; " + get_word_class_str(entry.word_types);
-    }
-
-    bool is_pret_of = false;
-    bool is_gen_of = false;
-    bool is_acc_of = false;
-    bool is_dat = false;
-
-    for (const WordRelation& w : entry.relations) {
-        if (w.kind == WordRelationKind::PreteriteOf) {
-            is_pret_of = true;
-        }
-        else if (w.kind == WordRelationKind::GenitiveOf) {
-            is_gen_of = true;
-        }
-        else if (w.kind == WordRelationKind::AccusativeOf) {
-            is_acc_of = true;
-        }
-        else if (w.kind == WordRelationKind::DativeOf) {
-            is_dat = true;
-        }
-    }
-
-    if (is_pret_of) {
-        attrs += L", pret";
-    }
-
-    if (is_gen_of && is_acc_of) {
-        attrs += L", gen-acc";
-    }
-    else if (is_gen_of) {
-        attrs += L", gen";
-    }
-    else if (is_acc_of) {
-        attrs += L", acc";
-    }
-    else if (is_dat) {
-        attrs += L", dat";
-    }
-
-    return word + L" (" + attrs + L")";
-}
-
-static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param, bool engl) {
+static INT_PTR CALLBACK PracticeWordsDialog(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param, bool engl) {
     UNREFERENCED_PARAMETER(l_param);
 
-    static PracticeState state;
+    static WordPracticeState state;
 
     HWND word_hwnd = GetDlgItem(hdlg, IDC_WORD);
     HWND summary_hwnd = GetDlgItem(hdlg, IDC_SUMMARY);
@@ -203,6 +74,63 @@ static INT_PTR CALLBACK PracticeDialog(HWND hdlg, UINT message, WPARAM w_param, 
             SetWindowTextW(summary_hwnd, state.get_summary(Akk::dict, engl, correct, answer).c_str());
             state.new_word(Akk::dict, engl);
             SetWindowTextW(word_hwnd, state.get_question().c_str());
+            SetWindowTextW(answer_hwnd, L"");
+            SetWindowTextW(your_answer_hwnd, (L"Your answer: " + answer).c_str());
+            return (INT_PTR)TRUE;
+        }
+        break;
+    }
+    }
+    return (INT_PTR)FALSE;
+}
+
+static INT_PTR CALLBACK PracticePhrasesDialog(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param, bool engl) {
+    UNREFERENCED_PARAMETER(l_param);
+
+    static PhrasePracticeState state;
+
+    HWND word_hwnd = GetDlgItem(hdlg, IDC_WORD);
+    HWND summary_hwnd = GetDlgItem(hdlg, IDC_SUMMARY);
+    HWND answer_hwnd = GetDlgItem(hdlg, IDC_ANSWER);
+    HWND your_answer_hwnd = GetDlgItem(hdlg, IDC_YOUR_ANSWER);
+
+    switch (message) {
+    case WM_INITDIALOG: {
+        Edit_LimitText(answer_hwnd, MAX_ANSWER_CHARS);
+        SetWindowSubclass(answer_hwnd, AkkadianEditControl, 0, NULL);
+        state.reset();
+        state.new_phrase(Akk::dict, engl);
+        try {
+            SetWindowTextW(word_hwnd, state.get_question(engl).c_str());
+        }
+        catch (PracticeError err) {
+            MessageBoxW(hdlg, err.message().c_str(), L"Error", MB_ICONERROR | MB_OK);
+            EndDialog(hdlg, IDABORT);
+            return (INT_PTR)TRUE;
+        }
+        SetWindowTextW(summary_hwnd, state.get_summary(Akk::dict, engl, false).c_str());
+        SetWindowTextW(answer_hwnd, L"");
+        SetWindowTextW(your_answer_hwnd, L"");
+        return (INT_PTR)TRUE;
+    }
+    case WM_COMMAND: {
+        if (LOWORD(w_param) == IDCANCEL) {
+            EndDialog(hdlg, LOWORD(w_param));
+            return (INT_PTR)TRUE;
+        }
+        else if (LOWORD(w_param) == IDOK) {
+            std::wstring answer = get_input_txt(hdlg, IDC_ANSWER);
+            PhraseAnswer ans_obj = state.accept_answer(answer, engl);
+            SetWindowTextW(summary_hwnd, state.get_summary(Akk::dict, engl, ans_obj.correct, ans_obj.noun, ans_obj.adj).c_str());
+            state.new_phrase(Akk::dict, engl);
+            try {
+                SetWindowTextW(word_hwnd, state.get_question(engl).c_str());
+            }
+            catch (PracticeError err) {
+                MessageBoxW(hdlg, err.message().c_str(), L"Error", MB_ICONERROR | MB_OK);
+                EndDialog(hdlg, IDABORT);
+                return (INT_PTR)TRUE;
+            }
             SetWindowTextW(answer_hwnd, L"");
             SetWindowTextW(your_answer_hwnd, (L"Your answer: " + answer).c_str());
             return (INT_PTR)TRUE;
@@ -266,12 +194,20 @@ Type a word into the box and press enter to search for definitions. Press the up
     return (INT_PTR)FALSE;
 }
 
-INT_PTR CALLBACK PracticeEnglish(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
-    return PracticeDialog(hdlg, message, w_param, l_param, true);
+INT_PTR CALLBACK PracticeEnglishWords(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return PracticeWordsDialog(hdlg, message, w_param, l_param, true);
 }
 
-INT_PTR CALLBACK PracticeAkkadian(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
-    return PracticeDialog(hdlg, message, w_param, l_param, false);
+INT_PTR CALLBACK PracticeAkkadianWords(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return PracticeWordsDialog(hdlg, message, w_param, l_param, false);
+}
+
+INT_PTR CALLBACK PracticeEnglishPhrases(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return PracticePhrasesDialog(hdlg, message, w_param, l_param, true);
+}
+
+INT_PTR CALLBACK PracticeAkkadianPhrases(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {
+    return PracticePhrasesDialog(hdlg, message, w_param, l_param, false);
 }
 
 INT_PTR CALLBACK LookupEnglish(HWND hdlg, UINT message, WPARAM w_param, LPARAM l_param) {

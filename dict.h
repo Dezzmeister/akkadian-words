@@ -17,8 +17,8 @@
 
 const std::wstring GRAMMAR_KINDS[] = {
 	L"n",
-	L"apr",
 	L"pr",
+	L"apr",
 	L"adj",
 	L"art",
 	L"conj",
@@ -167,6 +167,8 @@ typedef struct DictEntry {
 	void add_relation(WordRelation rel);
 
 	bool has_word_classes(std::vector<WordClass> classes) const;
+	bool has_rel_kinds(std::vector<WordRelationKind> rel_kinds) const;
+	bool has_defn(std::wstring& defn) const;
 
 	/**
 	 * Generate a summary of the dict entry for displaying as a search result. Uses the \r\n line separator
@@ -180,9 +182,61 @@ typedef struct DictEntry {
 	 */
 	std::wstring engl_summary(std::wstring& word) const;
 
+	/**
+	 * Get the attributes of this entry printed in a format like:
+	 *		(grammar_kind; attr1, attr2, ...)
+	 * Examples:
+	 *		(v; pret, s, m)
+	 *		(adj; nom, pl, f)
+	 */
+	std::wstring get_attrs() const;
+
 	DictEntry merge(DictEntry& other) const;
 	bool can_merge(DictEntry& other) const;
 } DictEntry;
+
+typedef bool (*FilterFunc)(const std::wstring& word, const DictEntry& entry);
+
+const FilterFunc DEFAULT_FILTER = [](const std::wstring& word, const DictEntry& entry) {
+	return true;
+};
+
+// Locates an entry in one of the two dictionaries. First index is the position of the
+// key in the key list, and the second index is the number of the entry
+typedef std::pair<size_t, size_t> EntryCoord;
+
+typedef struct CacheIndex {
+	const GrammarKind grammar_kind;
+	const std::vector<WordClass> word_classes;
+	const std::vector<WordRelationKind> rel_kinds;
+	const FilterFunc extra;
+
+	CacheIndex(GrammarKind grammar_kind, const std::vector<WordClass>& word_classes, const std::vector<WordRelationKind>& rel_kinds, const FilterFunc extra);
+
+	bool operator==(const CacheIndex& other) const;
+	bool operator<(const CacheIndex& other) const;
+
+private:
+	template <typename T>
+	static std::vector<T> copy_and_sort(const std::vector<T>& ts);
+} CacheIndex;
+
+template <size_t N>
+using Cache = struct Cache {
+	std::map<CacheIndex, std::vector<EntryCoord>> caches;
+	std::pair<CacheIndex, time_t> keys[N] = { 0 };
+	size_t size = 0;
+
+	Cache() = default;
+
+	const std::vector<EntryCoord>& get_entries(Dictionary& dict, CacheIndex& index) {
+		if (size == N) {
+			if (!caches.count(index)) {
+
+			}
+		}
+	}
+};
 
 /**
  * The core data structure of the application. A Dictionary is really two dictionaries, one from Akkadian
@@ -224,17 +278,33 @@ typedef struct Dictionary {
 
 	std::optional<const std::vector<DictEntry>*> get_akk(std::wstring& akk) const;
 	std::optional<const std::vector<DictEntry>*> get_engl(std::wstring& engl) const;
+	std::optional<DictEntry*> get_akk_filters(std::wstring& word, std::vector<GrammarKind> kinds, std::vector<WordClass> word_classes);
 
 	/**
-	 * Searches all English entries and returns results in ascending order of Levenshtein
-	 * distance. The number of items returned is at most 'limit', and the returned vector
-	 * will contain no words that have a Levenshtein distance from the query word that is greater
-	 * than 'cutoff'. See search.cpp for an explanation of the search algorithm.
+	 * Searches all Akkadian or English entries and returns results in descending order of similarity. 
+	 * The number of items returned is at most 'limit'. See search.cpp for an explanation of the search algorithm.
 	 */
 	std::vector<std::wstring> search(std::wstring& query, size_t limit, int cutoff, bool engl) const;
 
 	std::pair<std::wstring, DictEntry> random_engl();
 	std::pair<std::wstring, DictEntry> random_akk();
+
+	/**
+	 * Get a random word and entry matching the filters. The word must have the given grammar kind, all of the given word classes, all
+	 * of the given relation kinds, and 'extra' must return true for the word and entry. If no words matching the filters are available,
+	 * std::nullopt is returned.
+	 * 
+	 * There is a big problem here that needs to be solved in a compute-intensive way, memory-intensive way, or some combination of both.
+	 * One way to implement this function is to select a random key and keep iterating until you find one that matches the filters.
+	 * Unfortunately, this introduces bias because similar words are often grouped together in the dictionary, and they often start
+	 * with the same letters, placing them close together in the key list. This function should return a random entry selected
+	 * uniformly from the set of all entries matching the filters. In order to do this, you can either:
+	 *		1. Go through every key and form the set of all matching entries every time the function is called (compute-intensive)
+	 *		2. On construction of the dictionary, permute every possible filter and form every set could every be needed (memory-intensive)
+	 *		3. Maintain a cache of size N, form sets as needed and keep them in the cache (balanced approach)
+	 * This function takes the third approach. N is a parameter of the class.
+	 */
+	std::optional<std::pair<std::wstring, DictEntry>> rand_filters(GrammarKind kind, std::vector<WordClass> word_classes, std::vector<WordRelationKind> rel_kinds, bool engl, FilterFunc extra = DEFAULT_FILTER);
 
 	std::wstring akk_summary(std::wstring& akk) const;
 	std::wstring engl_summary(std::wstring& engl) const;
@@ -254,9 +324,6 @@ private:
 
 	void insert_engl(std::wstring engl, DictEntry entry);
 	void insert_akk(std::wstring akk, DictEntry entry);
-
-	std::optional<DictEntry*> get_akk_filters(std::wstring& word, std::vector<GrammarKind> kinds, std::vector<WordClass> word_classes);
-	std::optional<DictEntry*> get_engl_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
 } Dictionary;
 
 namespace Akk {

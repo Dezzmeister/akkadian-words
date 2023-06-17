@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "errors.h"
 
 DictParseError::DictParseError(const int line, const ParseErrorType err_type) : line(line), err_type(err_type) {}
@@ -32,6 +34,19 @@ std::wstring DictParseError::message() {
 	}
 	default: {
 		return prefix + L"Unknown error";
+	}
+	}
+}
+
+PracticeError::PracticeError(const PracticeErrorType err_type) : err_type(err_type) {}
+
+std::wstring PracticeError::message() {
+	switch (err_type) {
+	case PracticeErrorType::NotEnoughCases: {
+		return L"Dictionary needs to have nouns and adjectives in nom., gen., and acc., as well as masc., fem., sing., dual, and pl.";
+	}
+	default: {
+		__assume(false);
 	}
 	}
 }

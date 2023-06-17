@@ -27,3 +27,15 @@ typedef struct DictParseError {
 	std::wstring message();
 
 } DictParseError;
+
+typedef enum {
+	NotEnoughCases
+} PracticeErrorType;
+
+typedef struct PracticeError {
+	const PracticeErrorType err_type;
+
+	PracticeError(const PracticeErrorType err_type);
+
+	std::wstring message();
+} PracticeError;

@@ -58,8 +58,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE h_instance,
         return -1;
     }
 
-    // TODO: Place code here.
-
     // Initialize global strings
     LoadStringW(h_instance, IDS_APP_TITLE, sz_title, MAX_LOADSTRING);
     LoadStringW(h_instance, IDC_AKKADIAN_WORDS, sz_window_class, MAX_LOADSTRING);
@@ -98,8 +96,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE h_instance,
 
     return (int) msg.wParam;
 }
-
-
 
 //
 //  FUNCTION: MyRegisterClass()
@@ -190,17 +186,23 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM w_param, LPARAM l_param
             case IDM_EXIT:
                 DestroyWindow(hwnd);
                 break;
-            case ID_PRACTICE_ENGLISH:
-                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeEnglish);
+            case ID_AKKADIAN_LOOKUP:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_LOOKUP), hwnd, LookupAkkadian);
                 break;
-            case ID_PRACTICE_AKKADIAN:
-                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeAkkadian);
+            case ID_AKKADIAN_PRACTICEWORDS:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeAkkadianWords);
                 break;
-            case ID_LOOKUP_ENGLISH:
+            case ID_AKKADIAN_PRACTICEPHRASES:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeAkkadianPhrases);
+                break;
+            case ID_ENGLISH_LOOKUP:
                 DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_LOOKUP), hwnd, LookupEnglish);
                 break;
-            case ID_LOOKUP_AKKADIAN:
-                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_LOOKUP), hwnd, LookupAkkadian);
+            case ID_ENGLISH_PRACTICEWORDS:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeEnglishWords);
+                break;
+            case ID_ENGLISH_PRACTICEPHRASES:
+                DialogBoxW(h_inst, MAKEINTRESOURCEW(IDD_PRACTICE), hwnd, PracticeEnglishPhrases);
                 break;
             default:
                 return DefWindowProc(hwnd, message, w_param, l_param);

@@ -5,11 +5,13 @@
 #include <memory>
 #include <set>
 #include <sstream>
+#include <time.h>
 #include <tuple>
 #include <vector>
 #include <windows.h>
 
 #include "dict.h"
+#include "common.h"
 #include "errors.h"
 
 Dictionary Akk::dict;
@@ -26,19 +28,8 @@ static size_t file_size(std::wstring& filename) {
 	return fileinfo.st_size;
 }
 
-static std::vector<std::wstring> split_str(std::wstring& str, wchar_t delim) {
-	std::vector<std::wstring> out;
-	std::wstringstream stream(str);
-
-	for (std::wstring token; std::getline(stream, token, delim);) {
-		out.push_back(token);
-	}
-
-	return out;
-}
-
 static std::vector<WordClass> get_word_classes(std::wstring& str, int line_num) {
-	std::vector<std::wstring> tokens = split_str(str, ';');
+	std::vector<std::wstring> tokens = Akk::split_str(str, ';');
 	std::vector<WordClass> out;
 
 	std::transform(tokens.begin(), tokens.end(), std::back_inserter(out), [line_num](auto token) {
@@ -55,7 +46,7 @@ static std::vector<WordClass> get_word_classes(std::wstring& str, int line_num) 
 }
 
 static std::pair<std::vector<WordClass>, std::vector<WordRelation>> parse_word_attrs(std::wstring& str, int line_num) {
-	std::vector<std::wstring> tokens = split_str(str, ';');
+	std::vector<std::wstring> tokens = Akk::split_str(str, ';');
 	std::vector<WordClass> words;
 	std::vector<WordRelation> rels;
 
@@ -111,6 +102,20 @@ static GrammarKind get_grammar_kind(std::wstring& str, int line_num) {
 	throw DictParseError(line_num, ParseErrorType::UnknownGrammarKind);
 }
 
+static std::wstring get_word_class_str(const std::vector<WordClass>& classes) {
+	std::wstring out;
+
+	for (size_t i = 0; i < classes.size() - 1; i++) {
+		out += WORD_CLASSES[classes[i]] + L", ";
+	}
+
+	if (classes.size() != 0) {
+		out += WORD_CLASSES[classes[classes.size() - 1]];
+	}
+
+	return out;
+}
+
 template <typename T>
 static std::vector<T> dedup(std::vector<T>& vec) {
 	std::set<T> deduped(vec.begin(), vec.end());
@@ -148,6 +153,24 @@ bool DictEntry::has_word_classes(std::vector<WordClass> classes) const {
 	return std::all_of(classes.begin(), classes.end(), [this](WordClass c) {
 		return std::find(word_types.begin(), word_types.end(), c) != word_types.end();
 	});
+}
+
+bool DictEntry::has_rel_kinds(std::vector<WordRelationKind> rel_kinds) const {
+	return std::all_of(rel_kinds.begin(), rel_kinds.end(), [this](WordRelationKind k) {
+		return std::find_if(relations.begin(), relations.end(), [k](const WordRelation& r) {
+			return r.kind == k;
+		}) != relations.end();
+	});
+}
+
+bool DictEntry::has_defn(std::wstring& defn) const {
+	for (const std::wstring& str : defns) {
+		if (str == defn) {
+			return true;
+		}
+	}
+
+	return false;
 }
 
 std::wstring DictEntry::akk_summary(std::wstring& word) const {
@@ -218,6 +241,53 @@ std::wstring DictEntry::engl_summary(std::wstring& word) const {
 	return out;
 }
 
+std::wstring DictEntry::get_attrs() const {
+	std::wstring attrs = GRAMMAR_KINDS[grammar_kind];
+
+	if (word_types.size() != 0) {
+		attrs += L"; " + get_word_class_str(word_types);
+	}
+
+	bool is_pret_of = false;
+	bool is_gen_of = false;
+	bool is_acc_of = false;
+	bool is_dat = false;
+
+	for (const WordRelation& w : relations) {
+		if (w.kind == WordRelationKind::PreteriteOf) {
+			is_pret_of = true;
+		}
+		else if (w.kind == WordRelationKind::GenitiveOf) {
+			is_gen_of = true;
+		}
+		else if (w.kind == WordRelationKind::AccusativeOf) {
+			is_acc_of = true;
+		}
+		else if (w.kind == WordRelationKind::DativeOf) {
+			is_dat = true;
+		}
+	}
+
+	if (is_pret_of) {
+		attrs += L", pret";
+	}
+
+	if (is_gen_of && is_acc_of) {
+		attrs += L", gen-acc";
+	}
+	else if (is_gen_of) {
+		attrs += L", gen";
+	}
+	else if (is_acc_of) {
+		attrs += L", acc";
+	}
+	else if (is_dat) {
+		attrs += L", dat";
+	}
+
+	return L"(" + attrs + L")";
+}
+
 DictEntry DictEntry::merge(DictEntry& other) const {
 	std::vector<std::wstring> defns(this->defns);
 	std::vector<WordRelation> relations(this->relations);
@@ -230,6 +300,28 @@ DictEntry DictEntry::merge(DictEntry& other) const {
 
 bool DictEntry::can_merge(DictEntry& other) const {
 	return grammar_kind == other.grammar_kind && word_types == other.word_types;
+}
+
+CacheIndex::CacheIndex(GrammarKind grammar_kind, const std::vector<WordClass>& word_classes, const std::vector<WordRelationKind>& rel_kinds, const FilterFunc extra) :
+	grammar_kind(grammar_kind), word_classes(copy_and_sort(word_classes)), rel_kinds(copy_and_sort(rel_kinds)), extra(extra) {}
+
+bool CacheIndex::operator==(const CacheIndex& other) const {
+	return grammar_kind == other.grammar_kind &&
+		word_classes == other.word_classes &&
+		rel_kinds == other.rel_kinds &&
+		extra == other.extra;
+}
+
+bool CacheIndex::operator<(const CacheIndex& other) const {
+
+}
+
+template <typename T>
+static std::vector<T> CacheIndex::copy_and_sort(const std::vector<T>& ts) {
+	std::vector<T> out(ts);
+	std::sort(out.begin(), out.end());
+
+	return out;
 }
 
 Dictionary::Dictionary(std::wstring filename) {
@@ -251,10 +343,12 @@ Dictionary::Dictionary(std::wstring filename) {
 	buf.resize(chars_read);
 	buf.shrink_to_fit();
 	fclose(fp);
-	std::vector<std::wstring> lines = split_str(buf, '\n');
+	std::vector<std::wstring> lines = Akk::split_str(buf, '\n');
 
+	time_t t;
 	std::random_device rd;
 	this->rng = std::mt19937(rd());
+	this->rng.seed((unsigned int) time(&t));
 
 	// Word relations are resolved after the entire dictionary has been read. This means that
 	// a PreteriteOf relation can be defined before the corresponding infinitive, or a 
@@ -263,7 +357,7 @@ Dictionary::Dictionary(std::wstring filename) {
 	int line_num = 1;
 
 	for (std::wstring line : lines) {
-		std::vector<std::wstring> fields = split_str(line, ',');
+		std::vector<std::wstring> fields = Akk::split_str(line, ',');
 
 		// Word class field is optional
 		if (fields.size() < 3) {
@@ -274,7 +368,7 @@ Dictionary::Dictionary(std::wstring filename) {
 		}
 
 		std::wstring akk_word = fields[0];
-		std::vector<std::wstring> engl_words = split_str(fields[1], ';');
+		std::vector<std::wstring> engl_words = Akk::split_str(fields[1], ';');
 		GrammarKind grammar_kind = get_grammar_kind(fields[2], line_num);
 		std::pair<std::vector<WordClass>, std::vector<WordRelation>> attrs;
 
@@ -335,7 +429,7 @@ std::optional<DictEntry*> Dictionary::get_akk_filters(std::wstring& word, std::v
 		return std::nullopt;
 	}
 
-	std::vector<DictEntry>& v = akk_to_engl[word];
+	std::vector<DictEntry>& v = akk_to_engl.at(word);
 
 	for (size_t i = 0; i < v.size(); i++) {
 		DictEntry& d = v[i];
@@ -347,24 +441,6 @@ std::optional<DictEntry*> Dictionary::get_akk_filters(std::wstring& word, std::v
 		}
 	}
 	
-	return std::nullopt;
-}
-
-std::optional<DictEntry*> Dictionary::get_engl_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes) {
-	if (!engl_to_akk.count(word)) {
-		return std::nullopt;
-	}
-
-	std::vector<DictEntry>& v = engl_to_akk[word];
-
-	for (size_t i = 0; i < v.size(); i++) {
-		DictEntry& d = v[i];
-
-		if (d.grammar_kind == grammar_kind && d.has_word_classes(word_classes)) {
-			return std::optional<DictEntry*>(&v[i]);
-		}
-	}
-
 	return std::nullopt;
 }
 
@@ -398,7 +474,6 @@ std::wstring Dictionary::engl_summary(std::wstring& engl) const {
 	}
 
 	return out;
-
 }
 
 std::pair<std::wstring, DictEntry> Dictionary::random_engl() {
@@ -423,6 +498,34 @@ std::pair<std::wstring, DictEntry> Dictionary::random_akk() {
 	DictEntry entry = entries[index];
 
 	return std::make_pair(akk, entry);
+}
+
+std::optional<std::pair<std::wstring, DictEntry>> Dictionary::rand_filters(GrammarKind kind, std::vector<WordClass> word_classes, std::vector<WordRelationKind> rel_kinds, bool engl, FilterFunc extra) {
+	const std::map<std::wstring, std::vector<DictEntry>>& dict = engl ? engl_to_akk : akk_to_engl;
+	const std::vector<std::wstring>& keys = engl ? engl_keys : akk_keys;
+	std::uniform_int_distribution<> keys_dist(0, keys.size() - 1);
+	int start = keys_dist(rng);
+
+	for (size_t i = (start + 1) % keys.size(); i != start; i = (i + 1) % keys.size()) {
+		const std::wstring& key = keys[i];
+		const std::vector<DictEntry>& entries = dict.at(key);
+		std::uniform_int_distribution<> entries_dist(0, entries.size() - 1);
+
+		int entry_start = entries_dist(rng);
+		size_t j = entry_start;
+
+		do {
+			const DictEntry& entry = entries[j];
+
+			if (entry.grammar_kind == kind && entry.has_word_classes(word_classes) && entry.has_rel_kinds(rel_kinds) && extra(key, entry)) {
+				return std::make_optional<std::pair<std::wstring, DictEntry>>(key, entry);
+			}
+
+			j = (j + 1) % entries.size();
+		} while (j != entry_start);
+	}
+
+	return std::nullopt;
 }
 
 void Dictionary::resolve_relations(std::wstring& word, GrammarKind grammar_kind, std::vector<WordRelation>& rels) {
