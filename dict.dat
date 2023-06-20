@@ -29,8 +29,8 @@ ilātim,goddesses,n,pl;gen(ilātum);acc(ilātum);f
 ilum,god,n,s;nom;m
 ilim,god,n,s;gen(ilum);m
 ilam,god,n,s;acc(ilum);m
-ilū,god,n,pl;nom;m
-ilī,god,n,pl;gen(ilū);acc(ilū);m
+ilū,gods,n,pl;nom;m
+ilī,gods,n,pl;gen(ilū);acc(ilū);m
 kaspum,silver,n,s;nom;m
 kaspim,silver,n,s;gen(kaspum);m
 kaspam,silver,n,s;acc(kaspum);m
@@ -83,24 +83,24 @@ bītātim,houses;estates;households,n,pl;gen(bītātum);acc(bītātum);f
 emūqum,strength;power;force;ability;armed forces;value,n,s;nom;m
 emūqim,strength;power;force;ability;armed forces;value,n,s;gen(emūqum);m
 emūqam,strength;power;force;ability;armed forces;value,n,s;acc(emūqum);m
-emūqān,strength;power;force;ability;armed forces;value,n,dual;nom
-emūqīn,strength;power;force;ability;armed forces;value,n,dual;gen(emūqān);acc(emūqān)
-emūqū,strength;power;force;ability;armed forces;value,n,pl;nom;m
-emūqī,strength;power;force;ability;armed forces;value,n,pl;gen(emūqū);acc(emūqū);m
-emūqātum,strength;power;force;ability;armed forces;value,n,pl;nom;f
-emūqātim,strength;power;force;ability;armed forces;value,n,pl;gen(emūqātum);acc(emūqātum);f
+emūqān,strength;power;force;ability;armed forces;value,n,dual;nom;f
+emūqīn,strength;power;force;ability;armed forces;value,n,dual;gen(emūqān);acc(emūqān);f
+emūqū,strengths;powers;forces;abilities;armed forces;values,n,pl;nom;m
+emūqī,strengths;powers;forces;abilities;armed forces;values,n,pl;gen(emūqū);acc(emūqū);m
+emūqātum,strengths;powers;forces;abilities;armed forces;values,n,pl;nom;f
+emūqātim,strengths;powers;forces;abilities;armed forces;values,n,pl;gen(emūqātum);acc(emūqātum);f
 īnum,eye;spring,n,s;nom;f
 īnim,eye;spring,n,s;gen(īnum);f
 īnam,eye;spring,n,s;acc(īnum);f
-īnān,eyes,n,dual;nom
-īnīn,eyes,n,dual;gen(īnān);acc(īnān)
+īnān,eyes,n,dual;nom;f
+īnīn,eyes,n,dual;gen(īnān);acc(īnān);f
 īnātum,eyes;springs,n,pl;nom;f
 īnātim,eyes;springs,n,pl;gen(īnātum);acc(īnātum);f
 išdum,base;foundation;bottom;administration,n,s;nom;m
 išdim,base;foundation;bottom;administration,n,s;gen(išdum);m
 išdam,base;foundation;bottom;administration,n,s;acc(išdum);m
-išdān,base;foundation;bottom;administration;buttocks,n,dual;nom
-išdīn,base;foundation;bottom;administration;buttocks,n,dual;gen(išdān);acc(išdān)
+išdān,base;foundation;bottom;administration;buttocks,n,dual;nom;f
+išdīn,base;foundation;bottom;administration;buttocks,n,dual;gen(išdān);acc(išdān);f
 išdātum,bases;foundations;bottoms;administrations,n,pl;nom;f
 išdātim,bases;foundations;bottoms;administrations,n,pl;gen(išdātum);acc(išdātum);f
 libbum,heart;mind;thought;wish;inside;center;midst,n,s;nom;m
@@ -349,12 +349,12 @@ maẖrum,received,adj,va(maẖārum);s;nom;m
 maẖrim,received,adj,va(maẖārum);s;gen(maẖrum);m
 maẖram,received,adj,va(maẖārum);s;acc(maẖrum);m
 maẖrūtum,received,adj,va(maẖārum);pl;nom;m
-maẖrūtim,recieved,adj,va(maẖārum);pl;gen(maẖrūtum);acc(maẖrūtum);m
+maẖrūtim,received,adj,va(maẖārum);pl;gen(maẖrūtum);acc(maẖrūtum);m
 maẖirtum,received,adj,va(maẖārum);s;nom;f
 maẖirtim,received,adj,va(maẖārum);s;gen(maẖirtum);f
 maẖirtam,received,adj,va(maẖārum);s;acc(maẖirtum);f
 maẖrātum,received,adj,va(maẖārum);pl;nom;f
-maẖrātim,recieved,adj,va(maẖārum);pl;gen(maẖrātum);acc(maẖrātum);f
+maẖrātim,received,adj,va(maẖārum);pl;gen(maẖrātum);acc(maẖrātum);f
 īnam ša X maẖārum,to please X,v,id
 šalāmum,to become whole;to become sound;to become well;to become uninjured;to become safe;to recover;to arrive safely;to succeed;to prosper;to be completed,v,inf;G
 išlim,he/she became whole;he/she became sound;he/she became well;he/she became uninjured;he/she became safe;he/she recovered;he/she arrived safely;he/she succeeded;he/she prospered;it was completed,v,pret(šalāmum);s;m;f
@@ -388,8 +388,8 @@ alpī,oxen;bulls,n,pl;gen(alpū);acc(alpū);m
 eṭlum,young man;youth,n,s;nom;m
 eṭlim,young man;youth,n,s;gen(eṭlum);m
 eṭlam,young man;youth,n,s;acc(eṭlum);m
-eṭlūtum,young men;youth,n,pl;nom;m
-eṭlūtim,young men;youth,n,pl;gen(eṭlūtum);acc(eṭlūtum);m
+eṭlūtum,young men;youths;youth,n,pl;nom;m
+eṭlūtim,young men;youths;youth,n,pl;gen(eṭlūtum);acc(eṭlūtum);m
 kakkum,weapon,n,s;nom;m
 kakkim,weapon,n,s;gen(kakkum);m
 kakkam,weapon,n,s;acc(kakkum);m
@@ -717,13 +717,13 @@ kalbī,dogs,n,pl;gen(kalbū);acc(kalbū);m
 kišādum,neck;throat;riverbank,n,s;nom;m
 kišādim,neck;throat;riverbank,n,s;gen(kišādum);m
 kišādam,neck;throat;riverbank,n,s;acc(kišādum);m
-kišādātum,necks;throats;riverbanks,n,pl;nom;m
-kišādātim,necks;throats;riverbanks,n,pl;gen(kišādātum);acc(kišādātum);m
+kišādātum,necks;throats;riverbanks,n,pl;nom;f
+kišādātim,necks;throats;riverbanks,n,pl;gen(kišādātum);acc(kišādātum);f
 narkabtum,chariot,n,s;nom;f
-narkabtum,chariot,n,s;gen(narkabtum);f
-narkabtum,chariot,n,s;acc(narkabtum);f
+narkabtim,chariot,n,s;gen(narkabtum);f
+narkabtam,chariot,n,s;acc(narkabtum);f
 narkabātum,chariots,n,pl;nom;f
-narkabātum,chariots,n,pl;gen(narkabātum);acc(narkabātum);f
+narkabātim,chariots,n,pl;gen(narkabātum);acc(narkabātum);f
 šēpum,foot,n,s;nom;f
 šēpim,foot,n,s;gen(šēpum);f
 šēpam,foot,n,s;acc(šēpum);f
@@ -735,12 +735,12 @@ mādum,much,adj,va(miādum);s;nom;m
 mādim,much,adj,va(miādum);s;gen(mādum);m
 mādam,much,adj,va(miādum);s;acc(mādum);m
 mādūtum,many,adj,va(miādum);pl;nom;m
-mādūtum,many,adj,va(miādum);pl;gen(mādūtum);acc(mādūtum);m
+mādūtim,many,adj,va(miādum);pl;gen(mādūtum);acc(mādūtum);m
 māttum,much,adj,va(miādum);s;nom;f
 māttim,much,adj,va(miādum);s;gen(māttum);f
 māttam,much,adj,va(miādum);s;acc(māttum);f
 mādātum,many,adj,va(miādum);pl;nom;f
-mādātum,many,adj,va(miādum);pl;gen(mādātum);acc(mādātum);f
+mādātim,many,adj,va(miādum);pl;gen(mādātum);acc(mādātum);f
 kīma,like;as;according to;instead of,prep
 nasākum,to throw off;to throw down;to hurl;to shoot;to pile up (grain),v,inf;G
 issuk,he/she threw off;he/she threw down;he/she hurled;he/she shot;he/she piled up (grain),v,pret(nasākum);s;m;f
@@ -769,16 +769,16 @@ iprusū,they divided;they separated;they selected;they decided (a legal case);th
 iprusā,they divided;they separated;they selected;they decided (a legal case);they kept enemies away;they kept demons away,v,pret(parāsum);pl;f
 taprusā,you divided;you separated;you selected;you decided (a legal case);you kept enemies away;you kept demons away,v,pret(parāsum);pl;m;f
 niprus,we divided;we separated;we selected;we decided (a legal case);we kept enemies away;we kept demons away,v,pret(parāsum);pl;m;f
-parsum,divided;separate;separate,adj,va(parāsum);s;nom;m
-parsim,divided;separate;separate,adj,va(parāsum);s;gen(parsum);m
-parsam,divided;separate;separate,adj,va(parāsum);s;acc(parsum);m
-parsūtum,divided;separate;separate,adj,va(parāsum);pl;nom;m
-parsūtim,divided;separate;separate,adj,va(parāsum);pl;gen(parsūtum);acc(parsūtum);m
-parištum,divided;separate;separate,adj,va(parāsum);s;nom;f
-parištim,divided;separate;separate,adj,va(parāsum);s;gen(parištum);f
-parištam,divided;separate;separate,adj,va(parāsum);s;acc(parištum);f
-parsātum,divided;separate;separate,adj,va(parāsum);pl;nom;f
-parsātim,divided;separate;separate,adj,va(parāsum);pl;gen(parsātum);acc(parsātum);f
+parsum,divided;separate;separated,adj,va(parāsum);s;nom;m
+parsim,divided;separate;separated,adj,va(parāsum);s;gen(parsum);m
+parsam,divided;separate;separated,adj,va(parāsum);s;acc(parsum);m
+parsūtum,divided;separate;separated,adj,va(parāsum);pl;nom;m
+parsūtim,divided;separate;separated,adj,va(parāsum);pl;gen(parsūtum);acc(parsūtum);m
+parištum,divided;separate;separated,adj,va(parāsum);s;nom;f
+parištim,divided;separate;separated,adj,va(parāsum);s;gen(parištum);f
+parištam,divided;separate;separated,adj,va(parāsum);s;acc(parištum);f
+parsātum,divided;separate;separated,adj,va(parāsum);pl;nom;f
+parsātim,divided;separate;separated,adj,va(parāsum);pl;gen(parsātum);acc(parsātum);f
 šaṭārum,to inscribe;to write;to write down;to enter;to register (something in an account or list);to assign,v,inf;G
 išṭur,he/she inscribed;he/she wrote;he/she wrote down;he/she entered;he/she registered (something in an account or list);he/she assigned,v,pret(šaṭārum);s;nom;m;f
 tašṭur,you inscribed;you wrote;you wrote down;you entered;you registered (something in an account or list);you assigned,v,pret(šaṭārum);s;nom;m
@@ -836,7 +836,7 @@ kussiam ṣabātum,to take the throne,v,id
 purussûm,legal decision;case,n,s;nom;base(purussā);m
 purussêm,legal decision;case,n,s;gen(purussûm);m
 purussâm,legal decision;case,n,s;acc(purussûm);m
-purussû,legal decisions;cases,n,pl;nom;base(purussā)m;
+purussû,legal decisions;cases,n,pl;nom;base(purussā);m
 purussê,legal decisions;cases,n,pl;gen(purussû);acc(purussû);m
 rubātum,princess,n,s;nom;base(rubā);f
 rubātim,princess,n,s;gen(rubātum);f
@@ -904,3 +904,420 @@ maẖriātim,first;former;earlier;previous,adj,pl;gen(maẖriātum);acc(maẖri�
 šina,those;the aforementioned;said;these,apr,pl;nom;f
 šināti,those;the aforementioned;said;these,apr,pl;gen(šina);acc(šina);f
 šināšim,those;the aforementioned;said;these,apr,pl;dat(šina);f
+banûm,to build;to rebuild;to construct;to create,v,G;inf;3w
+ibni,he/she built;he/she rebuilt;he/she constructed;he/she created,v,pret(banûm);s;m;f
+tabni,you built;you rebuilt;you constructed;you created,v,pret(banûm);s;m
+tabnî,you built;you rebuilt;you constructed;you created,v,pret(banûm);s;f
+abni,I built;I rebuilt;I constructed;I created,v,pret(banûm);s;m;f
+ibnû,they built;they rebuilt;they constructed;they created,v,pret(banûm);pl;m
+ibniā,they built;they rebuilt;they constructed;they created,v,pret(banûm);pl;f
+tabniā,you built;you rebuilt;you constructed;you created,v,pret(banûm);pl;m;f
+nibni,we built;we rebuilt;we constructed;we created,v,pret(banûm);pl;m;f
+banûm,well made;well formed;fine,adj,va(banûm);base(bani);s;nom;m
+banîm,well made;well formed;fine,adj,va(banûm);s;gen(banûm);m
+baniam,well made;well formed;fine,adj,va(banûm);s;acc(banûm);m
+banûtum,well made;well formed;fine,adj,va(banûm);pl;nom;m
+banûtim,well made;well formed;fine,adj,va(banûm);pl;gen(banûtum);acc(banûtum);m
+banītum,well made;well formed;fine,adj,va(banûm);base(bani);s;nom;f
+banītim,well made;well formed;fine,adj,va(banûm);s;gen(banītum);f
+banītam,well made;well formed;fine,adj,va(banûm);s;acc(banītum);f
+baniātum,well made;well formed;fine,adj,va(banûm);pl;nom;f
+baniātim,well made;well formed;fine,adj,va(banûm);pl;gen(baniātum);acc(baniātum);f
+ẖadûm,to rejoice;to be happy,v,inf;G;3w
+iẖdu,he/she rejoiced;he/she was happy,v,pret(ẖadûm);s;m;f
+taẖdu,you rejoiced;you were happy,v,pret(ẖadûm);s;m
+taẖdî,you rejoiced;you were happy,v,pret(ẖadûm);s;f
+aẖdu,I rejoiced;I was happy,v,pret(ẖadûm);s;m;f
+iẖdû,they rejoiced;they were happy,v,pret(ẖadûm);pl;m
+iẖdâ,they rejoiced;they were happy,v,pret(ẖadûm);pl;f
+taẖdâ,you rejoiced;you were happy,v,pret(ẖadûm);pl;m;f
+niẖdu,we rejoiced;we were happy,v,pret(ẖadûm);pl;m;f
+ẖadûm,happy;joyful;rejoicing,adj,va(ẖadûm);s;base(ẖadi);nom;m
+ẖadîm,happy;joyful;rejoicing,adj,va(ẖadûm);s;gen(ẖadûm);m
+ẖadiām,happy;joyful;rejoicing,adj,va(ẖadûm);s;acc(ẖadûm);m
+ẖadûtum,happy;joyful;rejoicing,adj,va(ẖadûm);pl;nom;m
+ẖadûtim,happy;joyful;rejoicing,adj,va(ẖadûm);pl;gen(ẖadûtum);acc(ẖadûtum);m
+ẖadītum,happy;joyful;rejoicing,adj,va(ẖadûm);s;base(ẖadi);nom;f
+ẖadītim,happy;joyful;rejoicing,adj,va(ẖadûm);s;gen(ẖadītum);f
+ẖadītam,happy;joyful;rejoicing,adj,va(ẖadûm);s;acc(ẖadītum);f
+ẖadiātum,happy;joyful;rejoicing,adj,va(ẖadûm);pl;nom;f
+ẖadiātim,happy;joyful;rejoicing,adj,va(ẖadûm);pl;gen(ẖadiātum);acc(ẖadiātum);f
+leqûm,to take (in one's hand);to accept;to receive;to obtain;to take along;to take away;to take a wife;to marry,v,inf;G;3w
+ilqe,he/she took (in his/her hand);he/she accepted;he/she received;he/she obtained;he/she took along;he/she took away;he/she took a wife;he/she married,v,pret(leqûm);s;m;f
+telqe,you took (in your hand);you accepted;you received;you obtained;you took along;you took away;you took a wife;you married,v,pret(leqûm);s;m
+telqî,you took (in your hand);you accepted;you received;you obtained;you took along;you took away;you took a wife;you married,v,pret(leqûm);s;f
+elqe,I took (in my hand);I accepted;I received;I obtained;I took along;I took away;I took a wife;I married,v,pret(leqûm);s;m;f
+ilqû,they took (in their hands);they accepted;they received;they obtained;they took along;they took away;they took a wife;they married,v,pret(leqûm);pl;m
+ilqeā,they took (in their hands);they accepted;they received;they obtained;they took along;they took away;they took a wife;they married,v,pret(leqûm);pl;f
+telqeā,you took (in your hands);you accepted;you received;you obtained;you took along;you took away;you took wives;you married,v,pret(leqûm);pl;m;f
+nilqe,we took (in our hands);we accepted;we received;we obtained;we took along;we took away;we took wives;we married,v,pret(leqûm);pl;m;f
+malûm,to become full of;to fill with;to fill,v,inf;G;3w
+imla,he/she became full of;he/she filled with;he/she filled,v,pret(malûm);s;m;f
+tamla,you became full of;you filled with;you filled,v,pret(malûm);s;m
+tamlî,you became full of;you filled with;you filled,v,pret(malûm);s;f
+amla,I became full of;I filled with;I filled,v,pret(malûm);s;m;f
+imlû,they became full of;they filled with;they filled,v,pret(malûm);pl;m
+imlâ,they became full of;they filled with;they filled,v,pret(malûm);pl;f
+tamlâ,you became full of;you filled with;you filled,v,pret(malûm);pl;m;f
+nimla,we became full of;we filled with;we filled,v,pret(malûm);pl;m;f
+malûm,filled;full,adj,va(malûm);base(mali);s;nom;m
+malîm,filled;full,adj,va(malûm);s;gen(malûm);m
+maliām,filled;full,adj,va(malûm);s;acc(malûm);m
+malûtum,filled;full,adj,va(malûm);pl;nom;m
+malûtim,filled;full,adj,va(malûm);pl;gen(malûtum);acc(malûtum);m
+malītum,filled;full,adj,va(malûm);base(mali);s;nom;f
+malītim,filled;full,adj,va(malûm);s;gen(malītum);f
+malītam,filled;full,adj,va(malûm);s;acc(malītum);f
+maliātum,filled;full,adj,va(malûm);pl;nom;f
+maliātim,filled;full,adj,va(malûm);pl;gen(maliātum);acc(maliātum);f
+rabûm,to become large;to become great;to grow;to grow up;to increase,v,inf;G;3w
+irbi,he/she became large;he/she became great;he/she grew;he/she grew up;it increased,v,pret(rabûm);s;m;f
+tarbi,you became large;you became great;you grew;you grew up,v,pret(rabûm);s;m
+tarbî,you became large;you became great;you grew;you grew up,v,pret(rabûm);s;f
+arbi,I became large;I became great;I grew;I grew up,v,pret(rabûm);s;m;f
+irbû,they became large;they became great;they grew;they grew up;they increased,v,pret(rabûm);pl;m
+irbiā,they became large;they became great;they grew;they grew up;they increased,v,pret(rabûm);pl;f
+tarbiā,you became large;you became great;you grew;you grew up,v,pret(rabûm);pl;m;f
+nirbi,we became large;we became great;we grew;we grew up,v,pret(rabûm);pl;m;f
+rabûm,big;large;great;important;mature,adj,va(rabûm);base(rabi);s;nom;m
+rabîm,big;large;great;important;mature,adj,va(rabûm);s;gen(rabûm);m
+rabiām,big;large;great;important;mature,adj,va(rabûm);s;acc(rabûm);m
+rabûtum,big;large;great;important;mature,adj,va(rabûm);pl;nom;m
+rabûtim,big;large;great;important;mature,adj,va(rabûm);pl;gen(rabûtum);acc(rabûtum);m
+rabītum,big;large;great;important;mature,adj,va(rabûm);s;nom;f
+rabītim,big;large;great;important;mature,adj,va(rabûm);s;gen(rabītum);f
+rabītam,big;large;great;important;mature,adj,va(rabûm);s;acc(rabītum);f
+rabiātum,big;large;great;important;mature,adj,va(rabûm);pl;nom;f
+rabiātim,big;large;great;important;mature,adj,va(rabûm);pl;gen(rabiātum);acc(rabiātum);f
+šemûm,to hear;to listen;to listen to;to obey,v,inf;G;3w
+išme,he/she heard;he/she listened;he/she listened to;he/she obeyed,v,pret(šemûm);s;m;f
+tešme,you heard;you listened;you listened to;you obeyed,v,pret(šemûm);s;m
+tešmî,you heard;you listened;you listened to;you obeyed,v,pret(šemûm);s;f
+ešme,I heard;I listened;I listened to;I obeyed,v,pret(šemûm);s;m;f
+išmû,they heard;they listened;they listened to;they obeyed,v,pret(šemûm);pl;m
+išmeā,they heard;they listened;they listened to;they obeyed,v,pret(šemûm);pl;f
+tešmeā,you heard;you listened;you listened to;you obeyed,v,pret(šemûm);pl;m;f
+nišme,we heard;we listened;we listened to;we obeyed,v,pret(šemûm);pl;m;f
+šemûm,heard;having heard;informed;aware;obedient,adj,va(šemûm);base(šemi);s;nom;m
+šemîm,heard;having heard;informed;aware;obedient,adj,va(šemûm);s;gen(šemûm);m
+šemiām,heard;having heard;informed;aware;obedient,adj,va(šemûm);s;acc(šemûm);m
+šemûtum,heard;having heard;informed;aware;obedient,adj,va(šemûm);pl;nom;m
+šemûtim,heard;having heard;informed;aware;obedient,adj,va(šemûm);pl;gen(šemûtum);acc(šemûtum);m
+šemītum,heard;having heard;informed;aware;obedient,adj,va(šemûm);s;nom;f
+šemītim,heard;having heard;informed;aware;obedient,adj,va(šemûm);s;gen(šemītum);f
+šemītam,heard;having heard;informed;aware;obedient,adj,va(šemûm);s;acc(šemītum);f
+šemiātum,heard;having heard;informed;aware;obedient,adj,va(šemûm);pl;nom;f
+šemiātim,heard;having heard;informed;aware;obedient,adj,va(šemûm);pl;gen(šemiātum);acc(šemiātum);f
+zakûm,to become clean;to become clear;to become free of claims;to become free of obligations,v,inf;G;3w
+izku,he/she became clean;he/she became clear;he/she became free of claims;he/she became free of obligations,v,pret(zakûm);s;m;f
+tazku,you became clean;you became clear;you became free of claims;you became free of obligations,v,pret(zakûm);s;m
+tazkî,you became clean;you became clear;you became free of claims;you became free of obligations,v,pret(zakûm);s;f
+azku,I became clean;I became clear;I became free of claims;I became free of obligations,v,pret(zakûm);s;m;f
+izkû,they became clean;they became clear;they became free of claims;they became free of obligations,v,pret(zakûm);pl;m
+izkâ,they became clean;they became clear;they became free of claims;they became free of obligations,v,pret(zakûm);pl;f
+tazkâ,you became clean;you became clear;you became free of claims;you became free of obligations,v,pret(zakûm);pl;m;f
+nizku,we became clean;we became clear;we became free of claims;we became free of obligations,v,pret(zakûm);pl;m;f
+zakûm,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);base(zaku);s;nom;m
+zakîm,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);s;gen(zakûm);m
+zakâm,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);s;acc(zakûm);m
+zakûtum,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);pl;nom;m
+zakûtim,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);pl;gen(zakûtum);acc(zakûtum);m
+zakūtum,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);s;nom;f
+zakūtim,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);s;gen(zakūtum);f
+zakūtam,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);s;acc(zakūtum);f
+zakâtum,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);pl;nom;f
+zakâtim,clear;clean;cleaned;pure;free of claims,adj,va(zakûm);pl;gen(zakâtum);acc(zakâtum);f
+bēltum,lady;mistress;owner,n,s;nom;f
+bēltim,lady;mistress;owner,n,s;gen(bēltum);f
+bēltam,lady;mistress;owner,n,s;acc(bēltum);f
+bēlētum,ladies;mistresses;owners,n,pl;nom;f
+bēlētim,ladies;mistresses;owners,n,pl;gen(bēlētum);acc(bēlētum);f
+eqlum,plot of land;field;area;region,n,s;nom;m
+eqlim,plot of land;field;area;region,n,s;gen(eqlum);m
+eqlam,plot of land;field;area;region,n,s;acc(eqlum);m
+eqlētum,plots of land;fields;areas;regions,n,pl;nom;f
+eqlētim,plots of land;fields;areas;regions,n,pl;gen(eqlētum);acc(eqlētum);f
+mû,water;liquid,n,pl;nom;m
+mê,water;liquid,n,pl;gen(mû);acc(mû);m
+narûm,stela;stele,n,base(naru/narā);s;nom;m
+narîm,stela;stele,n,s;gen(narûm);m
+narêm,stela;stele,n,s;gen(narûm);m
+narâm,stela;stele,n,s;acc(narûm);m
+narû,stelae,n,pl;nom;m
+narî,stelae,n,pl;gen(narû);acc(narû);m
+narê,stelae,n,pl;gen(narû);acc(narû);m
+qīštum,gift;fee;votive offering,n,s;nom;f
+qīštim,gift;fee;votive offering,n,s;gen(qīštum);f
+qīštam,gift;fee;votive offering,n,s;acc(qīštum);f
+qīšātum,gifts;fees;votive offerings,n,pl;nom;f
+qīšātim,gifts;fees;votive offerings,n,pl;gen(qīšātum);acc(qīšātum);f
+ṣibittum,prison;imprisonment,n,s;nom;f
+ṣibittim,prison;imprisonment,n,s;gen(ṣibittum);f
+ṣibittam,prison;imprisonment,n,s;acc(ṣibittum);f
+ṣibitātum,prisons,n,pl;nom;f
+ṣibitātim,prisons,n,pl;gen(ṣibitātum);acc(ṣibitātum);f
+ṭēmum,information;news;report;command;mind;attitude;intention;decision,n,s;nom;m
+ṭēmim,information;news;report;command;mind;attitude;intention;decision,n,s;gen(ṭēmum);m
+ṭēmam,information;news;report;command;mind;attitude;intention;decision,n,s;acc(ṭēmum);m
+ṭēmū,news;reports;commands;minds;attitudes;intentions;decisions,n,pl;nom;m
+ṭēmî,news;reports;commands;minds;attitudes;intentions;decisions,n,pl;gen(ṭēmū);acc(ṭēmū);m
+ṭēmētum,news;reports;commands;minds;attitudes;intentions;decisions,n,pl;nom;m
+ṭēmētim,news;reports;commands;minds;attitudes;intentions;decisions,n,pl;gen(ṭēmētum);acc(ṭēmētum);m
+ṭēmam ṣabātum,to take action,v,id
+ṭēmam šakānum,to give a report;to give information,v,id
+ṣeẖrum,small;young,adj,va(ṣeẖērum);base(ṣeẖer);s;nom;m
+ṣeẖrim,small;young,adj,va(ṣeẖērum);s;gen(ṣeẖrum);m
+ṣeẖram,small;young,adj,va(ṣeẖērum);s;acc(ṣeẖrum);m
+ṣeẖrûtum,small;young,adj,va(ṣeẖērum);pl;nom;m
+ṣeẖrûtim,small;young,adj,va(ṣeẖērum);pl;gen(ṣeẖrûtum);acc(ṣeẖrûtum);m
+ṣeẖertum,small;young,adj,va(ṣeẖērum);s;nom;f
+ṣeẖertim,small;young,adj,va(ṣeẖērum);s;gen(ṣeẖertum);f
+ṣeẖertam,small;young,adj,va(ṣeẖērum);s;acc(ṣeẖertum);f
+ṣeẖrētum,small;young,adj,va(ṣeẖērum);pl;nom;f
+ṣeẖrētim,small;young,adj,va(ṣeẖērum);pl;gen(ṣeẖrētum);acc(ṣeẖrētum);f
+abi,father of,n,bf(abum);s;nom;gen(abi);acc(abi);m
+abū,fathers of,n,bf(abū);pl;nom;m
+abī,fathers of,n,bf(abī);pl;gen(abū);acc(abū);m
+aẖi,brother of,n,bf(aẖum);s;nom;gen(aẖi);acc(aẖi);m
+aẖū,brothers of,n,bf(aẖū);pl;nom;m
+aẖī,brothers of,n,bf(aẖī);pl;gen(aẖū);acc(aẖū);m
+alap,ox of;bull of,n,bf(alpum);s;nom;gen(alap);acc(alap);m
+alpū,oxen of;bulls of,n,bf(alpū);pl;nom;m
+alpī,oxen of;bulls of,n,bf(alpī);pl;gen(alpū);acc(alpū);m
+āl,town of;city of,n,bf(ālum);s;nom;gen(āl);acc(āl);m
+āli,town of;city of,n,bf(ālum);s;nom;gen(āli);acc(āli);m
+ālū,towns of;cities of,n,bf(ālū);pl;nom;m
+ālī,towns of;cities of,n,bf(ālī);pl;gen(ālū);acc(ālū);m
+amat,female slave of;womanservant of,n,bf(amtum);s;nom;gen(amat);acc(amat);f
+amāt,female slaves of;womanservants of,n,bf(amātum);pl;nom;gen(amāt);acc(amāt);f
+aššat,wife of,n,bf(aššatum);s;nom;gen(aššat);acc(aššat);f
+aššāt,wives of,n,bf(aššātum);pl;nom;gen(aššāt);acc(aššāt);f
+awīl,human being of;person of;grown man of;free man of;boss of;man of,n,bf(awīlum);s;nom;gen(awīl);acc(awīl);m
+awīlū,human beings of;people of;grown men of;free men of;bosses of;men of,n,bf(awīlū);pl;nom;m
+awīlī,human beings of;people of;grown men of;free men of;bosses of;men of,n,bf(awīlī);pl;gen(awīlū);acc(awīlū);m
+bēlet,lady of;mistress of;owner of,n,bf(bēltum);s;nom;gen(bēlet);acc(bēlet);f
+bēlēt,ladies of;mistresses of;owners of,n,bf(bēlētum);pl;nom;gen(bēlēt);acc(bēlēt);f
+bēl,lord of;owner of;master of,n,bf(bēlum);s;nom;gen(bēl);acc(bēl);m
+bēli,lord of;owner of;master of,n,bf(bēlum);s;nom;gen(bēli);acc(bēli);m
+bēlū,lords of;owners of;masters of,n,bf(bēlū);pl;nom;m
+bēlī,lords of;owners of;masters of,n,bf(bēlī);pl;gen(bēlū);acc(bēlū);m
+bīt,house of;estate of;household of,n,bf(bītum);s;nom;gen(bīt);acc(bīt);m
+bīti,house of;estate of;household of,n,bf(bītum);s;nom;gen(bīti);acc(bīti);m
+bītāt,houses of;estates of;households of,n,bf(bītātum);pl;nom;gen(bītāt);acc(bītāt);f
+damiqti,good of;goodness of;favor of;luck of;fame of,n,bf(damiqtum);s;nom;gen(damiqti);acc(damiqti);f
+damiq,good one of;one of good quality of;beautiful one of;favorable one of;expert one of,adj,bf(damqum);s;nom;gen(damiq);acc(damiq);m
+damqūt,good ones of;ones of good quality of;beautiful ones of;favorable ones of;expert ones of,adj,bf(damqūtum);pl;nom;gen(damqūt);acc(damqūt);m
+damiqti,good one of;one of good quality of;beautiful one of;favorable one of;expert one of,adj,bf(damiqtum);s;nom;gen(damiqti);acc(damiqti);f
+damqāt,good ones of;ones of good quality of;beautiful ones of;favorable ones of;expert ones of,adj,bf(damqātum);pl;nom;gen(damqāt);acc(damqāt);f
+dannat,famine of;hard times of;fortress of,n,bf(dannatum);s;nom;gen(dannat);acc(dannat);f
+dannāt,famines of;hard times of;fortresses of,n,bf(dannātum);pl;nom;gen(dannāt);acc(dannāt);f
+dan,the strong one of;solid one of;mighty one of;powerful one of;fortified one of;fierce one of;savage one of;severe one of;difficult one of;urgent one of,adj,bf(dannum);s;nom;gen(dan);acc(dan);m
+danni,the strong one of;solid one of;mighty one of;powerful one of;fortified one of;fierce one of;savage one of;severe one of;difficult one of;urgent one of,adj,bf(dannum);s;nom;gen(danni);acc(danni);m
+dannūt,strong ones of;solid ones of;mighty ones of;powerful ones of;fortified ones of;fierce ones of;savage ones of;severe ones of;difficult ones of;urgent ones of,adj,bf(dannūtum);pl;nom;gen(dannūt);acc(dannūt);m
+dannat,strong one of;solid one of;mighty one of;powerful one of;fortified one of;fierce one of;savage one of;severe one of;difficult one of;urgent one of,adj,bf(dannum);s;nom;gen(dannat);acc(dannat);f
+dannāt,strong ones of;solid ones of;mighty ones of;powerful ones of;fortified ones of;fierce ones of;savage ones of;severe ones of;difficult ones of;urgent ones of,adj,bf(dannātum);pl;nom;gen(dannāt);acc(dannāt);f
+dayyān,judge of,n,bf(dayyānum);s;nom;gen(dayyān);acc(dayyān);m
+dayyānū,judges of,n,bf(dayyānū);pl;nom;m
+dayyānī,judges of,n,bf(dayyānī);pl;gen(dayyānū);acc(dayyānū);m
+ekal,palace of,n,bf(ekallum);s;nom;gen(ekal);acc(ekal);f
+ekallāt,palaces of,n,bf(ekallātum);pl;nom;gen(ekallāt);acc(ekallāt);f
+emūq,strength of;power of;force of;ability of;armed forces of;value of,n,bf(emūqum);s;nom;gen(emūq);acc(emūq);m
+emūqū,strengths of;powers of;forces of;abilities of;armed forces of;values of,n,bf(emūqū);pl;nom;m
+emūqī,strengths of;powers of;forces of;abilities of;armed forces of;values of,n,bf(emūqī);pl;gen(emūqū);acc(emūqū);m
+emūqā,strength of;power of;force of;ability of;armed forces of;value of,n,bf(emūqān);dual;nom;f
+emūqī,strength of;power of;force of;ability of;armed forces of;value of,n,bf(emūqīn);dual;gen(emūqā);acc(emūqā);f
+emuqāt,strengths of;powers of;forces of;abilities of;armed forces of;values of,n,bf(emuqātum);pl;nom;gen(emuqāt);acc(emuqāt);f
+eqel,plot of land of;field of;area of;region of,n,bf(eqlum);s;nom;gen(eqel);acc(eqel);m
+eqlēt,plots of land of;fields of;areas of;regions of,n,bf(eqlētum);pl;nom;gen(eqlēt);acc(eqlēt);f
+eṭel,young man of;youth of,n,bf(eṭlum);s;nom;gen(eṭel);acc(eṭel);m
+eṭlūt,young men of;youths of;youth of,n,bf(eṭlūt);pl;nom;gen(eṭlūt);acc(eṭlūt);m
+ẖaliq,escaped one of;missing one of;lost one of,adj,bf(ẖalqum);s;nom;gen(ẖaliq);acc(ẖaliq);m
+ẖalqūt,escaped ones of;missing ones of;lost ones of,adj,bf(ẖalqūtum);pl;nom;gen(ẖalqūt);acc(ẖalqūt);m
+ẖaliqti,escaped one of;missing one of;lost one of,adj,bf(ẖaliqtum);s;nom;gen(ẖaliqti);acc(ẖaliqti);f
+ẖalqāt,escaped ones of;missing ones of;lost ones of,adj,bf(ẖalqātum);pl;nom;gen(ẖalqāt);acc(ẖalqāt);f
+ẖarrān,road of;path of;way of;journey of;military expedition of;military campaign of;caravan of,n,bf(ẖarrānum);s;nom;gen(ẖarrān);acc(ẖarrān);f
+ẖarrānāt,roads of;paths of;ways of;journeys of;military expeditions of;military campaigns of;caravans of,n,bf(ẖarrānātum);pl;nom;gen(ẖarrānāt);acc(ẖarrānāt);f
+ẖurāṣ,gold of,n,bf(ẖurāṣum);s;nom;gen(ẖurāṣ);acc(ẖurāṣ);m
+ilat,goddess of,n,bf(iltum);s;nom;gen(ilat);acc(ilat);f
+ilāt,goddesses of,n,bf(ilātum);pl;nom;gen(ilāt);acc(ilāt);f
+il,god of,n,bf(ilum);s;nom;gen(il);acc(il);m
+ili,god of,n,bf(ilum);s;nom;gen(ili);acc(ili);m
+ilū,gods of,n,bf(ilū);pl;nom;m
+ilī,gods of,n,bf(ilī);pl;gen(ilū);acc(ilū);m
+īn,eye of;spring of,n,bf(īnum);s;nom;gen(īn);acc(īn);f
+īni,eye of;spring of,n,bf(īnum);s;nom;gen(īni);acc(īni);f
+īnā,eyes of,n,bf(īnān);dual;nom;f
+īnī,eyes of,n,bf(īnīn);dual;gen(īnā);acc(īnā);f
+īnāt,eyes of;springs of,n,bf(īnātum);pl;nom;gen(īnāt);acc(īnāt);f
+išid,base of;foundation of;bottom of;administration of,n,bf(išdum);s;nom;gen(išid);acc(išid);m
+išdā,base of;foundation of;bottom of;administration of;buttocks of,n,bf(išdān);dual;nom;f
+išdī,base of;foundation of;bottom of;administration of;buttocks of,n,bf(išdīn);dual;gen(išdā);acc(išdā);f
+išdāt,bases of;foundations of;bottoms of;administrations of,n,bf(išdātum);pl;nom;gen(išdāt);acc(išdāt);f
+kak,weapon of,n,bf(kakkum);s;nom;gen(kak);acc(kak);m
+kakki,weapon of,n,bf(kakkum);s;nom;gen(kakki);acc(kakki);m
+kakkū,weapons of,n,bf(kakkū);pl;nom;m
+kakkī,weapons of,n,bf(kakkī);pl;gen(kakkū);acc(kakkū);m
+kalab,dog of,n,bf(kalbum);s;nom;gen(kalab);acc(kalab);m
+kalbū,dogs of,n,bf(kalbū);pl;nom;m
+kalbī,dogs of,n,bf(kalbī);pl;gen(kalbū);acc(kalbū);m
+kasap,silver of,n,bf(kaspum);s;nom;gen(kasap);acc(kasap);m
+kišād,neck of;throat of;riverbank of,n,bf(kišādum);s;nom;gen(kišād);acc(kišād);m
+kišādāt,necks of;throats of;riverbanks of,n,bf(kišādātum);pl;nom;gen(kišādāt);acc(kišādāt);f
+kussi,chair of;seat of;throne of,n,bf(kussûm);s;nom;gen(kussi);acc(kussi);f
+kussiāt,chairs of;seats of;thrones of,n,bf(kussiātum);pl;nom;gen(kussiāt);acc(kussiāt);f
+libbi,heart of;mind of;thought of;wish of;inside of;center of;midst of,n,bf(libbum);s;nom;gen(libbi);acc(libbi);m
+libbū,hearts of;minds of;thoughts of;wishes of;insides of;centers of;midsts of,n,bf(libbū);pl;nom;m
+libbī,hearts of;minds of;thoughts of;wishes of;insides of;centers of;midsts of,n,bf(libbī);pl;gen(libbū);acc(libbū);m
+mād,much of,adj,bf(mādum);s;nom;gen(mād);acc(mād);m
+mādi,much of,adj,bf(mādum);s;nom;gen(mādi);acc(mādi);m
+mādūt,many of,adj,bf(mādūtum);pl;nom;gen(mādūt);acc(mādūt);m
+mātti,much of,adj,bf(māttum);s;nom;gen(mātti);acc(mātti);f
+mādāt,many of,adj,bf(mādātum);pl;nom;gen(mādāt);acc(mādāt);f
+maqit,fallen one of;collapsed one of;one in ruins of,adj,bf(maqtum);s;nom;gen(maqit);acc(maqit);m
+maqtūt,fallen ones of;collapsed ones of;ones in ruins of,adj,bf(maqtūtum);pl;nom;gen(maqtūt);acc(maqtūt);m
+maqitti,fallen one of;collapsed one of;one in ruins of,adj,bf(maqittum);s;nom;gen(maqitti);acc(maqitti);f
+maqtāt,fallen ones of;collapsed ones of;ones in ruins of,adj,bf(maqtātum);pl;nom;gen(maqtāt);acc(maqtāt);f
+maruṣ,sick one of;ill one of;diseased one of;painful one of;difficult one of,adj,bf(marṣum);s;nom;gen(maruṣ);acc(maruṣ);m
+marṣūt,sick ones of;ill ones of;diseased ones of;painful ones of;difficult ones of,adj,bf(marṣūtum);pl;nom;gen(marṣūt);acc(marṣūt);m
+marušti,sick one of;ill one of;diseased one of;painful one of;difficult one of,adj,bf(maruštum);s;nom;gen(marušti);acc(marušti);f
+marṣāt,sick ones of;ill ones of;diseased ones of;painful ones of;difficult ones of,adj,bf(marṣātum);pl;nom;gen(marṣāt);acc(marṣāt);f
+mārat,daughter of,n,bf(mārtum);s;nom;gen(mārat);acc(mārat);f
+mārāt,daughters of,n,bf(mārātum);pl;nom;gen(mārāt);acc(mārāt);f
+mār,son of,n,bf(mārum);s;nom;gen(mār);acc(mār);m
+māri,son of,n,bf(mārum);s;nom;gen(māri);acc(māri);m
+mārū,sons of,n,bf(mārū);pl;nom;m
+mārī,sons of,n,bf(mārī);pl;gen(mārū);acc(mārū);m
+marušti,difficulty of;hardship of;trouble of;duress of,n,bf(maruštum);s;nom;gen(marušti);acc(marušti);f
+marṣāt,difficulties of;hardships of;troubles of;duress of,n,bf(marṣātum);pl;nom;gen(marṣāt);acc(marṣāt);f
+māt,country of;native land of;land of;open country of,n,bf(mātum);s;nom;gen(māt);acc(māt);f
+māti,country of;native land of;land of;open country of,n,bf(mātum);s;nom;gen(māti);acc(māti);f
+mātāt,countries of;native lands of;lands of;open countries of,n,bf(mātātum);pl;nom;gen(mātāt);acc(mātāt);f
+mû,water of;liquid of,n,bf(mû);pl;nom;m
+mê,water of;liquid of,n,bf(mê);pl;gen(mû);acc(mû);m
+mut,husband of;man of,n,bf(mutum);s;nom;gen(mut);acc(mut);m
+muti,husband of;man of,n,bf(mutum);s;nom;gen(muti);acc(muti);m
+mutū,husbands of;men of,n,bf(mutū);pl;nom;m
+mutī,husbands of;men of,n,bf(mutī);pl;gen(mutū);acc(mutū);m
+nakir,enemy of;foe of,n,bf(nakrum);bf(nakirum);s;nom;gen(nakir);acc(nakir);m
+nakirū,enemies of;foes of,n,bf(nakirū);pl;nom;m
+nakirī,enemies of;foes of,n,bf(nakirī);pl;gen(nakirū);acc(nakirū);m
+nakar,enemy of;foe of,n,bf(nakrum);bf(nakarum);s;nom;gen(nakar);acc(nakar);m
+nakarū,enemies of;foes of,n,bf(nakarū);pl;nom;m
+nakarī,enemies of;foes of,n,bf(nakarī);pl;gen(nakarū);acc(nakarū);m
+nakir,hostile one of;inimical one of;foreign one of,adj,bf(nakrum);bf(nakirum);s;nom;gen(nakir);acc(nakir);m
+nakrūt,hostile ones of;inimical ones of;foreign ones of,adj,bf(nakrūtum);pl;nom;gen(nakrūt);acc(nakrūt);m
+nakirti,hostile one of;inimical one of;foreign one of,adj,bf(nakirtum);s;nom;gen(nakirti);acc(nakirti);f
+nakrāt,hostile ones of;inimical ones of;foreign ones of,adj,bf(nakrātum);pl;nom;gen(nakrāt);acc(nakrāt);f
+nakar,hostile one of;inimical one of;foreign one of,adj,bf(nakrum);bf(nakarum);s;nom;gen(nakar);acc(nakar);m
+nakarti,hostile one of;inimical one of;foreign one of,adj,bf(nakartum);s;nom;gen(nakarti);acc(nakarti);f
+napišti,life of;vigor of;good health of;person of;personnel of;self of;throat of,n,bf(napištum);s;nom;gen(napišti);acc(napišti);f
+napšāt,life of;vigor of;good health of;persons of;personnel of;selves of;throats of,n,bf(napšātum);pl;nom;gen(napšāt);acc(napšāt);f
+narkabti,chariot of,n,bf(narkabtum);s;nom;gen(narkabti);acc(narkabti);f
+narkabāt,chariots of,n,bf(narkabātum);pl;nom;gen(narkabāt);acc(narkabāt);f
+naru,stela of;stele of,n,bf(narûm);s;nom;gen(naru);acc(naru);m
+nari,stela of;stele of,n,bf(narûm);s;nom;gen(nari);acc(nari);m
+nar,stela of;stele of,n,bf(narûm);s;nom;gen(nar);acc(nar);m
+narû,stelae of,n,bf(narû);pl;nom;m
+narî,stelae of,n,bf(narî);pl;gen(narû);acc(narû);m
+narê,stelae of,n,bf(narê);pl;gen(narû);acc(narû);m
+nār,river of;canal of,n,bf(nārum);s;nom;gen(nār);acc(nār);f
+nāri,river of;canal of,n,bf(nārum);s;nom;gen(nāri);acc(nāri);f
+nārāt,rivers of;canals of,n,bf(nārātum);pl;nom;gen(nārāt);acc(nārāt);f
+purussê,legal decision of;case of,n,bf(purussûm);s;nom;gen(purussê);acc(purussê);m
+purussi,legal decision of;case of,n,bf(purussûm);s;nom;gen(purussi);acc(purussi);m
+purussā,legal decision of;case of,n,bf(purussûm);s;nom;gen(purussā);acc(purussā);m
+purussû,legal decisions of;cases of,n,bf(purussû);pl;nom;m
+purussê,legal decisions of;cases of,n,bf(purussê);pl;gen(purussû);acc(purussû);m
+qaqqad,head of;top of;person of;principal amount of,n,bf(qaqqadum);s;nom;gen(qaqqad);acc(qaqqad);m
+qaqqadū,heads of;tops of;persons of;principal amounts of,n,bf(qaqqadū);pl;nom;m
+qaqqadī,heads of;tops of;persons of;principal amounts of,n,bf(qaqqadī);pl;gen(qaqqadū);acc(qaqqadū);m
+qatan,thin one of;narrow one of;fine (textile) of,adj,bf(qatnum);s;nom;gen(qatan);acc(qatan);m
+qatnūt,thin ones of;narrow ones of;fine (textiles) of,adj,bf(qatnūtum);pl;nom;gen(qatnūt);acc(qatnūt);m
+qatatti,thin one of;narrow one of;fine (textile) of,adj,bf(qatattum);s;nom;gen(qatatti);acc(qatatti);f
+qatnāt,thin ones of;narrow ones of;fine (textiles) of,adj,bf(qatnātum);pl;nom;gen(qatnāt);acc(qatnāt);f
+qāt,hand of;care of;charge of;responsibility of,n,bf(qātum);s;nom;gen(qāt);acc(qāt);f
+qāti,hand of;care of;charge of;responsibility of,n,bf(qātum);s;nom;gen(qāti);acc(qāti);f
+qātā,hands of,n,bf(qātān);dual;nom;f
+qātī,hands of,n,bf(qātīn);dual;gen(qātā);acc(qātā);f
+qātāt,guarantee of;security of;pledge of,n,bf(qātātum);pl;nom;gen(qātāt);acc(qātāt);f
+qīšti,gift of;fee of;votive offering of,n,bf(qīštum);s;nom;gen(qīšti);acc(qīšti);f
+qīšāt,gifts of;fees of;votive offerings of,n,bf(qīšātum);pl;nom;gen(qīšāt);acc(qīšāt);f
+rapaš,wide one of;broad one of,adj,bf(rapšum);s;nom;gen(rapaš);acc(rapaš);m
+rapšūt,wide ones of;broad ones of,adj,bf(rapšūtum);pl;nom;gen(rapšūt);acc(rapšūt);m
+rapašti,wide one of;broad one of,adj,bf(rapaštum);s;nom;gen(rapašti);acc(rapašti);f
+rapšāt,wide ones of;broad ones of,adj,bf(rapšātum);pl;nom;gen(rapšāt);acc(rapšāt);f
+rubāt,princess of,n,bf(rubātum);s;nom;gen(rubāt);acc(rubāt);f
+rubât,princesses of,n,bf(rubâtum);pl;nom;gen(rubât);acc(rubât);f
+rubê,prince of;ruler of,n,bf(rubûm);s;nom;gen(rubê);acc(rubê);m
+rubi,prince of;ruler of,n,bf(rubûm);s;nom;gen(rubi);acc(rubi);m
+rubā,prince of;ruler of,n,bf(rubûm);s;nom;gen(rubā);acc(rubā);m
+rubû,princes of;rulers of,n,bf(rubû);pl;nom;m
+rubê,princes of;rulers of,n,bf(rubê);pl;gen(rubû);acc(rubû);m
+ṣabit,seized one of;deposited one of;captive one of;prisoner of,adj,bf(ṣabtum);s;nom;gen(ṣabit);acc(ṣabit);m
+ṣabtūt,seized ones of;deposited ones of;captive ones of;prisoners of,adj,bf(ṣabtūtum);pl;nom;gen(ṣabtūt);acc(ṣabtūt);m
+ṣabitti,seized one of;deposited one of;captive one of;prisoner of,adj,bf(ṣabittum);s;nom;gen(ṣabitti);acc(ṣabitti);f
+ṣabtāt,seized ones of;deposited ones of;captive ones of;prisoners of,adj,bf(ṣabtātum);pl;nom;gen(ṣabtāt);acc(ṣabtāt);f
+ṣāb,gang of;army of;troops of;worker of;soldier of,n,bf(ṣābum);s;nom;gen(ṣāb);acc(ṣāb);m
+ṣābi,gang of;army of;troops of;worker of;soldier of,n,bf(ṣābum);s;nom;gen(ṣābi);acc(ṣābi);m
+ṣābū,gangs of;armies of;troops of;workers of;soldiers of,n,bf(ṣābū);pl;nom;m
+ṣābī,gangs of;armies of;troops of;workers of;soldiers of,n,bf(ṣābī);pl;gen(ṣābū);acc(ṣābū);m
+ṣeẖer,small one of;young one of,adj,bf(ṣeẖrum);s;nom;gen(ṣeẖer);acc(ṣeẖer);m
+ṣeẖrūt,small ones of;young ones of,adj,bf(ṣeẖrūtum);pl;nom;gen(ṣeẖrūt);acc(ṣeẖrūt);m
+ṣeẖerti,small one of;young one of,adj,bf(ṣeẖertum);s;nom;gen(ṣeẖerti);acc(ṣeẖerti);f
+ṣeẖrāt,small ones of;young ones of,adj,bf(ṣeẖrātum);pl;nom;gen(ṣeẖrāt);acc(ṣeẖrāt);f
+ṣibitti,prison of;imprisonment of,n,bf(ṣibittum);s;nom;gen(ṣibitti);acc(ṣibitti);f
+ṣibitāt,prisons of,n,bf(ṣibitātum);pl;nom;gen(ṣibitāt);acc(ṣibitāt);f
+šadi,mountain of;mountain region of,n,bf(šadûm);s;nom;gen(šadi);acc(šadi);m
+šad,mountain of;mountain region of,n,bf(šadûm);s;nom;gen(šad);acc(šad);m
+šadû,mountains of;mountain regions of,n,bf(šadû);pl;nom;m
+šadî,mountains of;mountain regions of,n,bf(šadî);pl;gen(šadû);acc(šadû);m
+šakin,placed one of;lying one of;situated one of;located one of;present one of;established one of;appointed one of;endowed one of;provided one of,n,bf(šaknum);s;nom;gen(šakin);acc(šakin);m
+šaknūt,placed ones of;lying ones of;situated ones of;located ones of;present ones of;established ones of;appointed ones of;endowed ones of;provided ones of,n,bf(šaknūtum);pl;nom;gen(šaknūt);acc(šaknūt);m
+šakitti,placed one of;lying one of;situated one of;located one of;present one of;established one of;appointed one of;endowed one of;provided one of,n,bf(šakittum);s;nom;gen(šakitti);acc(šakitti);f
+šaknāt,placed ones of;lying ones of;situated ones of;located ones of;present ones of;established ones of;appointed ones of;endowed ones of;provided ones of,n,bf(šaknātum);pl;nom;gen(šaknāt);acc(šaknāt);f
+šaman,oil of;fat of,n,bf(šamnum);s;nom;gen(šaman);acc(šaman);m
+šamnū,oils of;fats of,n,bf(šamnū);pl;nom;m
+šamnī,oils of;fats of,n,bf(šamnī);pl;gen(šamnū);acc(šamnū);m
+šariq,stolen one of,adj,bf(šarqum);s;nom;gen(šariq);acc(šariq);m
+šarqūt,stolen ones of,adj,bf(šarqūtum);pl;nom;gen(šarqūt);acc(šarqūt);m
+šariqti,stolen one of,adj,bf(šariqtum);s;nom;gen(šariqti);acc(šariqti);f
+šarqāt,stolen ones of,adj,bf(šarqātum);pl;nom;gen(šarqāt);acc(šarqāt);f
+šarrāq,thief of,n,bf(šarrāqum);s;nom;gen(šarrāq);acc(šarrāq);m
+šarrāqū,thieves of,n,bf(šarrāqū);pl;nom;m
+šarrāqī,thieves of,n,bf(šarrāqī);pl;gen(šarrāqū);acc(šarrāqū);m
+šarrat,queen of,n,bf(šarratum);s;nom;gen(šarrat);acc(šarrat);f
+šarrāt,queens of,n,bf(šarrātum);pl;nom;gen(šarrāt);acc(šarrāt);f
+šar,king of,n,bf(šarrum);s;nom;gen(šar);acc(šar);m
+šarri,king of,n,bf(šarrum);s;nom;gen(šarri);acc(šarri);m
+šarrū,kings of,n,bf(šarrū);pl;nom;m
+šarrī,kings of,n,bf(šarrī);pl;gen(šarrū);acc(šarrū);m
+šēp,foot of,n,bf(šēpum);s;nom;gen(šēp);acc(šēp);f
+šēpi,foot of,n,bf(šēpum);s;nom;gen(šēpi);acc(šēpi);f
+šēpā,feet of,n,bf(šēpān);dual;nom;f
+šēpī,feet of,n,bf(šēpīn);dual;gen(šēpā);acc(šēpā);f
+šēpāt,feet of,n,bf(šēpātum);pl;nom;gen(šēpāt);acc(šēpāt);f
+šikar,beer of;intoxicating liquid of;alcohol of,n,bf(šikarum);s;nom;gen(šikar);acc(šikar);m
+šikarū,beers of;intoxicating liquids of,n,bf(šikarū);pl;nom;m
+šikarī,beers of;intoxicating liquids of,n,bf(šikarī);pl;gen(šikarū);acc(šikarū);m
+šīpāt,wool of,n,bf(šīpātum);pl;nom;gen(šīpāt);acc(šīpāt);f
+ṭāb,pleasant one of;pleasing one of;sweet one of;fine one of;good one of,adj,bf(ṭābum);s;nom;gen(ṭāb);acc(ṭāb);m
+ṭābi,pleasant one of;pleasing one of;sweet one of;fine one of;good one of,adj,bf(ṭābum);s;nom;gen(ṭābi);acc(ṭābi);m
+ṭābūt,pleasant ones of;pleasing ones of;sweet ones of;fine ones of;good ones of,adj,bf(ṭābūtum);pl;nom;gen(ṭābūt);acc(ṭābūt);m
+ṭābti,pleasant one of;pleasing one of;sweet one of;fine one of;good one of,adj,bf(ṭābtum);s;nom;gen(ṭābti);acc(ṭābti);f
+ṭābāt,pleasant ones of;pleasing ones of;sweet ones of;fine ones of;good ones of,adj,bf(ṭābātum);pl;nom;gen(ṭābāt);acc(ṭābāt);f
+ṭēm,information of;news of;report of;command of;mind of;attitude of;intention of;decision of,n,bf(ṭēmum);s;nom;gen(ṭēm);acc(ṭēm);m
+ṭēmi,information of;news of;report of;command of;mind of;attitude of;intention of;decision of,n,bf(ṭēmum);s;nom;gen(ṭēmi);acc(ṭēmi);m
+ṭēmū,news of;reports of;commands of;minds of;attitudes of;intentions of;decisions of,n,bf(ṭēmū);pl;nom;m
+ṭēmī,news of;reports of;commands of;minds of;attitudes of;intentions of;decisions of,n,bf(ṭēmī);pl;gen(ṭēmū);acc(ṭēmū);m
+ṭuppi,tablet of;document of;letter of,n,bf(ṭuppum);s;nom;gen(ṭuppi);acc(ṭuppi);m
+ṭuppū,tablets of;documents of;letters of,n,bf(ṭuppū);pl;nom;m
+ṭuppī,tablets of;documents of;letters of,n,bf(ṭuppī);pl;gen(ṭuppū);acc(ṭuppū);m
+ṭuppāt,tablets of;documents of;letters of,n,bf(ṭuppātum);pl;nom;gen(ṭuppāt);acc(ṭuppāt);f
+ummi,mother of,n,bf(ummum);s;nom;gen(ummi);acc(ummi);f
+ummāt,mothers of,n,bf(ummātum);pl;nom;gen(ummāt);acc(ummāt);f
+uzun,ear of;wisdom of;understanding of,n,bf(uznum);s;nom;gen(uzun);acc(uzun);f
+uznā,ears of,n,bf(uznān);dual;nom;f
+uznī,ears of,n,bf(uznīn);dual;gen(uznā);acc(uznā);f
+warad,male slave of;manservant of,n,bf(wardum);s;nom;gen(warad);acc(warad);m
+wardū,male slaves of;manservants of,n,bf(wardū);pl;nom;m
+wardī,male slaves of;manservants of,n,bf(wardī);pl;gen(wardū);acc(wardū);m
