@@ -1,0 +1,9 @@
+{
+  "editor.inlineSuggest.enabled": false,
+  "[plaintext]": {
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "editor.quickSuggestions": {
+      "other": "off"
+    }
+  }
+}
