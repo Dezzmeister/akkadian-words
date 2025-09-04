@@ -13,4 +13,5 @@ and generates a corresponding English -> Akkadian dictionary from the given defi
 
 ## Todo
 
-The program is complete until I find bugs or until I learn more Akkadian. I need to add several more chapters of vocab from the book to _dict.dat_.
+The program is complete for now. It was helpful, but adding all of the vocab per-chapter became too much of a chore,
+and the greater challenge in learning Akkadian is memorizing the cuneiform signs.
