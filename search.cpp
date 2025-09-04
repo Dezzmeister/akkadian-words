@@ -28,10 +28,9 @@
  * not know the exact diacritical marks, so the algorithm should be able to pick words that are
  * similar to your query word.
  * 
- * Author: Joe Desmond - desmonji@bc.edu
+ * Author: Joe Desmond - dezzmeister16@gmail.com
  */
-#include <Windows.h>
-
+#include "common.h"
 #include "dict.h"
 
 /**
@@ -49,8 +48,8 @@ static bool cmp_chars(wchar_t a, wchar_t b) {
 	case L'ṭ':
 		return b == L't' || b == L'ṭ';
 	case L'h':
-	case L'ẖ':
-		return b == L'h' || b == L'ẖ';
+	case L'ḫ':
+		return b == L'h' || b == L'ḫ';
 	case L'a':
 	case L'ā':
 	case L'â':
@@ -92,8 +91,8 @@ static bool akk_starts_with(const std::wstring& s, const std::wstring& sub) {
  * https://www.codeproject.com/Articles/13525/Fast-memory-efficient-Levenshtein-algorithm-2.
  */
 static int lev_dist(const std::wstring& s, const std::wstring& t) {
-	int n = s.size();
-	int m = t.size();
+	int n = (int)s.size();
+	int m = (int)t.size();
 	int row_idx;
 	int col_idx;
 	wchar_t row_i;
@@ -171,7 +170,7 @@ std::vector<std::wstring> Dictionary::search(std::wstring& query, size_t limit, 
 	}
 
 	if (query.size() <= cutoff) {
-		return basic_search(query, limit, cutoff);
+		return basic_search(query, limit);
 	}
 
 	return lev_search(query, limit, cutoff);
@@ -233,7 +232,7 @@ std::vector<std::wstring> Dictionary::lev_search(std::wstring& query, size_t lim
 	return out;
 }
 
-std::vector<std::wstring> Dictionary::basic_search(std::wstring& query, size_t limit, int cutoff) const {
+std::vector<std::wstring> Dictionary::basic_search(std::wstring& query, size_t limit) const {
 	std::vector<std::wstring> out;
 
 	for (const std::wstring& word : akk_keys) {

@@ -1,7 +1,7 @@
 /**
  * Error types.
  * 
- * Author: Joe Desmond - desmonji@bc.edu
+ * Author: Joe Desmond - dezzmeister16@gmail.com
  */
 #pragma once
 

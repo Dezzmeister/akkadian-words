@@ -1,7 +1,7 @@
 /**
  * Custom dialog component(s).
  * 
- * Author: Joe Desmond - desmonji@bc.edu
+ * Author: Joe Desmond - dezzmeister16@gmail.com
  */
 #pragma once
 
@@ -12,6 +12,6 @@
  * to the left of the caret. Possible diacritical marks are those used for the letters in the alphabet
  * given in Huehnergard's book. This callback is meant to be used by subclassing an existing edit control and
  * passing this function as the callback. "Subclassing" here is a Win32 feature: 
- * https://learn.microsoft.com/en-us/windows/win32/controls/subclassing-overview.
+ * https://learn.microsoft.com/en-us/windows/win32/controls/subclassing-overview
  */
 LRESULT CALLBACK AkkadianEditControl(HWND hwnd, UINT msg, WPARAM w_param, LPARAM l_param, UINT_PTR u_id_subclass, DWORD_PTR dw_ref_data);

@@ -1,13 +1,11 @@
-﻿#include <algorithm>
+﻿#include "common.h"
+#include <algorithm>
 #include <assert.h>
 #include <iomanip>
-#include <Windows.h>
 #include <CommCtrl.h>
 #include <sstream>
 #include <string>
 #include <windowsx.h>
-
-#include "common.h"
 #include "components.h"
 #include "errors.h"
 #include "handlers.h"
@@ -43,8 +41,8 @@ static bool is_whitespace(wchar_t c) {
 }
 
 static std::wstring trim(std::wstring& str) {
-    int start = 0;
-    int end = str.size();
+    size_t start = 0;
+    size_t end = str.size();
 
     while (is_whitespace(str[start])) start++;
     while (is_whitespace(str[end - 1])) end--;
@@ -87,15 +85,15 @@ std::wstring PracticeState::get_summary(Dictionary& dict, bool engl, bool wasCor
         return L"0/0";
     }
 
-    DictEntry entry = this->entry;
+    DictEntry found_entry = this->entry;
 
     // Find the Akkadian word's definition
     if (engl && wasCorrect) {
         const std::vector<DictEntry>* entries = *dict.get_akk(answer);
 
         for (const DictEntry& e : *entries) {
-            if (e.grammar_kind == entry.grammar_kind && e.word_types == entry.word_types) {
-                entry = e;
+            if (e.grammar_kind == found_entry.grammar_kind && e.word_types == found_entry.word_types) {
+                found_entry = e;
                 this->word = answer;
                 break;
             }
@@ -113,12 +111,12 @@ std::wstring PracticeState::get_summary(Dictionary& dict, bool engl, bool wasCor
 
     out += get_question() += L":\n";
 
-    for (size_t i = 0; i < entry.defns.size() - 1; i++) {
-        std::wstring defn = entry.defns[i];
+    for (size_t i = 0; i < found_entry.defns.size() - 1; i++) {
+        std::wstring defn = found_entry.defns[i];
         out += defn + L", ";
     }
 
-    out += entry.defns[entry.defns.size() - 1];
+    out += found_entry.defns[found_entry.defns.size() - 1];
 
     return out;
 }

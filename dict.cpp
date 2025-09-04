@@ -1,4 +1,5 @@
-﻿#include <algorithm>
+﻿#include "common.h"
+#include <algorithm>
 #include <assert.h>
 #include <cstdlib>
 #include <iostream>
@@ -7,8 +8,6 @@
 #include <sstream>
 #include <tuple>
 #include <vector>
-#include <windows.h>
-
 #include "dict.h"
 #include "errors.h"
 
@@ -33,23 +32,6 @@ static std::vector<std::wstring> split_str(std::wstring& str, wchar_t delim) {
 	for (std::wstring token; std::getline(stream, token, delim);) {
 		out.push_back(token);
 	}
-
-	return out;
-}
-
-static std::vector<WordClass> get_word_classes(std::wstring& str, int line_num) {
-	std::vector<std::wstring> tokens = split_str(str, ';');
-	std::vector<WordClass> out;
-
-	std::transform(tokens.begin(), tokens.end(), std::back_inserter(out), [line_num](auto token) {
-		for (size_t i = 0; i < NUM_WORD_CLASSES; i++) {
-			if (token == WORD_CLASSES[i]) {
-				return (WordClass)i;
-			}
-		}
-
-		throw DictParseError(line_num, ParseErrorType::UnknownWordClass);
-	});
 
 	return out;
 }
@@ -126,7 +108,12 @@ bool WordRelation::operator<(const WordRelation& rhs) const {
 	return kind < rhs.kind;
 }
 
-DictEntry::DictEntry(const std::vector<WordClass> word_types, const std::vector<std::wstring> defns, GrammarKind grammar_kind, std::vector<WordRelation> relations) : 
+DictEntry::DictEntry(
+	const std::vector<WordClass> word_types,
+	const std::vector<std::wstring> defns,
+	GrammarKind grammar_kind,
+	std::vector<WordRelation> relations
+) : 
 	word_types(word_types), defns(defns), grammar_kind(grammar_kind), relations(relations) {
 	std::sort(this->word_types.begin(), this->word_types.end());
 	std::sort(this->relations.begin(), this->relations.end());
@@ -219,13 +206,13 @@ std::wstring DictEntry::engl_summary(std::wstring& word) const {
 }
 
 DictEntry DictEntry::merge(DictEntry& other) const {
-	std::vector<std::wstring> defns(this->defns);
-	std::vector<WordRelation> relations(this->relations);
+	std::vector<std::wstring> new_defns(this->defns);
+	std::vector<WordRelation> new_relations(this->relations);
 
-	defns.insert(defns.end(), other.defns.begin(), other.defns.end());
-	relations.insert(relations.end(), other.relations.begin(), other.relations.end());
+	new_defns.insert(new_defns.end(), other.defns.begin(), other.defns.end());
+	new_relations.insert(new_relations.end(), other.relations.begin(), other.relations.end());
 
-	return DictEntry(word_types, dedup(defns), grammar_kind, dedup(relations));
+	return DictEntry(word_types, dedup(new_defns), grammar_kind, dedup(new_relations));
 }
 
 bool DictEntry::can_merge(DictEntry& other) const {
@@ -402,11 +389,11 @@ std::wstring Dictionary::engl_summary(std::wstring& engl) const {
 }
 
 std::pair<std::wstring, DictEntry> Dictionary::random_engl() {
-	std::uniform_int_distribution<> keys_dist(0, engl_to_akk.size() - 1);
+	std::uniform_int_distribution<> keys_dist(0, (int)engl_to_akk.size() - 1);
 	int engl_index = keys_dist(rng);
 	std::wstring engl = engl_keys[engl_index];
 	const std::vector<DictEntry>& entries = engl_to_akk.at(engl);
-	std::uniform_int_distribution<> entries_dist(0, entries.size() - 1);
+	std::uniform_int_distribution<> entries_dist(0, (int)entries.size() - 1);
 	int index = entries_dist(rng);
 	DictEntry entry = entries[index];
 
@@ -414,11 +401,11 @@ std::pair<std::wstring, DictEntry> Dictionary::random_engl() {
 }
 
 std::pair<std::wstring, DictEntry> Dictionary::random_akk() {
-	std::uniform_int_distribution<> keys_dist(0, akk_to_engl.size() - 1);
+	std::uniform_int_distribution<> keys_dist(0, (int)akk_to_engl.size() - 1);
 	int akk_index = keys_dist(rng);
 	std::wstring akk = akk_keys[akk_index];
 	const std::vector<DictEntry>& entries = akk_to_engl.at(akk);
-	std::uniform_int_distribution<> entries_dist(0, entries.size() - 1);
+	std::uniform_int_distribution<> entries_dist(0, (int)entries.size() - 1);
 	int index = entries_dist(rng);
 	DictEntry entry = entries[index];
 

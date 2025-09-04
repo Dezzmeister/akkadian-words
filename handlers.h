@@ -1,18 +1,17 @@
 /**
  * Dialog callback functions and other related functions.
  *
- * Author: Joe Desmond - desmonji@bc.edu
+ * Author: Joe Desmond - dezzmeister16@gmail.com
  */
 #pragma once
-#include <windows.h>
-
+#include "common.h"
 #include "dict.h"
 
 typedef struct PracticeState {
-	int correct;
-	int total;
-	std::wstring word;
-	DictEntry entry;
+	int correct{};
+	int total{};
+	std::wstring word{};
+	DictEntry entry{};
 
 	void reset();
 	void new_word(Dictionary& dict, bool engl);

@@ -2,7 +2,7 @@
  * Types, constants, and declarations for the dictionary functionality. The Akkadian-English dictionary
  * is at the heart of this application.
  * 
- * Author: Joe Desmond - desmonji@bc.edu
+ * Author: Joe Desmond - dezzmeister16@gmail.com
  */
 #pragma once
 
@@ -45,9 +45,9 @@ const std::wstring WORD_CLASSES[] = {
 // These relations can be defined in the dictionary. The reverse relations will be set when parsing the dictionary.
 // (For example, you can define a preterite of an infinitive, but not an infinitive of a preterite)
 const std::wstring RELATIONS[] = {
-	// pret(nasāẖum) indicates that the current word is a preterite form of nasāẖum
+	// pret(nasāḫum) indicates that the current word is a preterite form of nasāḫum
 	L"pret",
-	// va(nasāẖum) indicates that the current word is a verbal adjective of nasāẖum
+	// va(nasāḫum) indicates that the current word is a verbal adjective of nasāḫum
 	L"va",
 	// subst(nakrum) indicates that the current word is a substantivized noun form of nakrum
 	L"subst",
@@ -140,8 +140,8 @@ typedef enum {
 } WordRelationKind;
 
 typedef struct WordRelation {
-	WordRelationKind kind;
-	std::wstring word;
+	WordRelationKind kind{};
+	std::wstring word{};
 
 	WordRelation(WordRelationKind kind, std::wstring word);
 
@@ -155,14 +155,19 @@ typedef struct WordRelation {
  * ways.
  */
 typedef struct DictEntry {
-	std::vector<WordClass> word_types;
-	std::vector<std::wstring> defns;
-	GrammarKind grammar_kind;
-	std::vector<WordRelation> relations;
+	std::vector<WordClass> word_types{};
+	std::vector<std::wstring> defns{};
+	GrammarKind grammar_kind{};
+	std::vector<WordRelation> relations{};
 
 	DictEntry() = default;
 
-	DictEntry(const std::vector<WordClass> word_types, const std::vector<std::wstring> defns, GrammarKind grammar_kind, std::vector<WordRelation> relations);
+	DictEntry(
+		const std::vector<WordClass> word_types,
+		const std::vector<std::wstring> defns,
+		GrammarKind grammar_kind,
+		std::vector<WordRelation> relations
+	);
 
 	void add_relation(WordRelation rel);
 
@@ -216,7 +221,7 @@ typedef struct Dictionary {
 	 * 
 	 * A valid word class is any one of the strings in WORD_CLASSES. A valid relation is any one of the strings
 	 * in RELATIONS, followed by a left paren, a word, and a right paren. Relations are set in one direction in the
-	 * file, and the corresponding reverse relations are determined when the file is loaded. See RELATIONS for more info.
+	 * file, and the corresponding inverse relations are determined when the file is loaded. See RELATIONS for more info.
 	 * 
 	 * Whitespace is significant, even at the beginning and end of a line.
 	 */
@@ -240,14 +245,14 @@ typedef struct Dictionary {
 	std::wstring engl_summary(std::wstring& engl) const;
 
 private:
-	std::map<std::wstring, std::vector<DictEntry>> engl_to_akk;
-	std::map<std::wstring, std::vector<DictEntry>> akk_to_engl;
-	std::vector<std::wstring> engl_keys;
-	std::vector<std::wstring> akk_keys;
-	std::mt19937 rng;
+	std::map<std::wstring, std::vector<DictEntry>> engl_to_akk{};
+	std::map<std::wstring, std::vector<DictEntry>> akk_to_engl{};
+	std::vector<std::wstring> engl_keys{};
+	std::vector<std::wstring> akk_keys{};
+	std::mt19937 rng{};
 
 	std::vector<std::wstring> lev_search(std::wstring& query, size_t limit, int cutoff) const;
-	std::vector<std::wstring> basic_search(std::wstring& query, size_t limit, int cutoff) const;
+	std::vector<std::wstring> basic_search(std::wstring& query, size_t limit) const;
 	std::vector<std::wstring> engl_search(std::wstring& query, size_t limit) const;
 
 	void resolve_relations(std::wstring& word, GrammarKind grammar_kind, std::vector<WordRelation>& rels);
@@ -255,8 +260,16 @@ private:
 	void insert_engl(std::wstring engl, DictEntry entry);
 	void insert_akk(std::wstring akk, DictEntry entry);
 
-	std::optional<DictEntry*> get_akk_filters(std::wstring& word, std::vector<GrammarKind> kinds, std::vector<WordClass> word_classes);
-	std::optional<DictEntry*> get_engl_filters(std::wstring& word, GrammarKind grammar_kind, std::vector<WordClass> word_classes);
+	std::optional<DictEntry*> get_akk_filters(
+		std::wstring& word,
+		std::vector<GrammarKind> kinds,
+		std::vector<WordClass> word_classes
+	);
+	std::optional<DictEntry*> get_engl_filters(
+		std::wstring& word,
+		GrammarKind grammar_kind,
+		std::vector<WordClass> word_classes
+	);
 } Dictionary;
 
 namespace Akk {
